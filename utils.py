@@ -2,6 +2,7 @@ import rdkit
 import torch 
 import torch.nn as nn 
 import copy 
+import multiprocessing
 
 def get_smi_list(path) :
     with open(path, 'r') as file :

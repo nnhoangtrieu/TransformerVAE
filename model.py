@@ -210,4 +210,23 @@ class Decoder(nn.Module) :
         target = self.proj(target)
         target = F.log_softmax(target, dim = -1)
 
+        return target
+    
+
+class TransformerVAE(nn.Module) :
+    def __init__(self, dim_model, dim_latent, num_head, dropout, vocab_size) :
+        super(TransformerVAE, self).__init__()
+
+        self.first_encoder = FirstEncoder(dim_model, dim_latent, num_head, dropout, vocab_size)
+        self.pos = PositionalEncoding(dim_latent, dropout)
+        self.second_encoder = SecondEncoder(dim_model, dim_latent, num_head, dropout)
+        self.decoder = Decoder(dim_model, num_head, dropout, vocab_size)
+
+    def forward(self, x, target) :
+        z = self.first_encoder(x) 
+        z = self.pos(z)
+
+        memory = self.second_encoder(z)
+        target = self.decoder(memory, target)
+
         return target 
