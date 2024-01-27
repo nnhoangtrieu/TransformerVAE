@@ -1,11 +1,11 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F 
+import torch 
+import torch.nn as nn 
+import torch.nn.functional as F
 import math 
-import utils
-from utils import get_mask, clones
+import utils 
+from utils import clones, subsequent_mask
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, dropout, max_len=5000):
@@ -81,8 +81,16 @@ class EncoderOne(nn.Module) :
 
         self.layers = clones(EncoderOneLayer(dim_model, dim_latent, num_head, dropout), num_layer)
 
-        self.mu = nn.Linear(dim_model, dim_latent)
-        self.sigma = nn.Linear(dim_model, dim_latent)
+        self.mu = nn.Sequential(
+            nn.Linear(dim_model, dim_latent),
+            nn.LeakyReLU(),
+            nn.LayerNorm(dim_latent),
+        )
+        self.sigma = nn.Sequential(
+            nn.Linear(dim_model, dim_latent),
+            nn.LeakyReLU(),
+            nn.LayerNorm(dim_latent),
+        )
 
         
     def forward(self, x) :
