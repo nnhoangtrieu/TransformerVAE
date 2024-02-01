@@ -7,7 +7,8 @@ from torch.utils.data import DataLoader, Dataset, random_split
 import torch.nn.functional as F
 import model 
 from model import TransformerVAE
-
+import rdkit 
+from rdkit.Chem import MolFromSmiles as get_mol
 
 parser = argparse.ArgumentParser(description='Description of your script.')
 
@@ -24,7 +25,7 @@ parser.add_argument('--max_len', type=int, default=40, help='batch size')
 
 arg_list = parser.parse_args()
 
-#python train.py --dim_model 256 --dim_expansion 256 --dim_latent 128 --num_head 8 --num_layer 2 --dropout 0.5 --lr 0.0003 --epochs 10 --batch_size 256 --max_len 40
+#python train.py --dim_model 256 --dim_expansion 256 --dim_latent 128 --num_head 8 --num_layer 1 --dropout 0.5 --lr 0.0003 --epochs 10 --batch_size 256 --max_len 40
 
 def tokenize(smi) :
     return [0] + [smi_dic[char] for char in smi] + [1]
@@ -76,6 +77,37 @@ print('///////////////// START TRAINING //////////////////')
 print('///////////////////////////////////////////////////')
 print('\n\n')
 
+def metric(pred, smi_list, inv_dic) : 
+    pred = pred.cpu().tolist() 
+    gen_smi = []
+    
+    valid_count = 0 
+    novel_count = 0
+
+    for i in pred : 
+        smi = ''.join([inv_dic[c] for c in i])
+        smi = smi.replace("<START>", "").replace("<PAD>","").replace("<END>","")
+        if get_mol(smi) != None : 
+            gen_smi.append(smi) 
+            valid_count += 1 
+
+    gen_set = set(gen_smi) 
+    try : 
+        unique_count = (len(gen_set) / len(gen_smi)) * 100
+    except : 
+        unique_count = 0 
+
+    for smi in gen_smi : 
+        if smi not in smi_list : 
+            novel_count += 1 
+
+    return (valid_count / len(pred)) * 100, unique_count, (novel_count / len(pred)) * 100, gen_set
+
+
+NUM_GENERATE = 500
+
+rdkit.rdBase.DisableLog('rdApp.*')
+
 for epoch in range(1, arg_list.epochs + 1) :
     train_loss = 0
     beta = beta_np_cyc[epoch-1]
@@ -93,9 +125,9 @@ for epoch in range(1, arg_list.epochs + 1) :
 
 
         model.eval()
-        if i % (len(train_loader) / 1000) :
-            z = torch.randn(1, max_len, 128).to(device)
-            target = torch.zeros(1, 1, dtype=torch.long).to(device)
+        if i % (len(train_loader) // 20) == 0 :
+            z = torch.randn(NUM_GENERATE, max_len, 128).to(device)
+            target = torch.zeros(NUM_GENERATE, 1, dtype=torch.long).to(device)
 
             for i in range(max_len - 1) :
                 out = model.inference(z, target)
@@ -103,9 +135,17 @@ for epoch in range(1, arg_list.epochs + 1) :
                 idx = idx[:, -1, :]
                 target = torch.cat([target, idx], dim = 1)
 
-            target = target.squeeze(0).tolist()
-            smiles = ''.join([inv_dic[i] for i in target])
-            smiles = smiles.replace("<START>", "").replace("<PAD>", "").replace("<END>","")
-            print(f'{smiles}')
+
+            validity, uniqueness, novelty, gen_set = metric(target, smi_list, inv_dic) 
+            print(f'\nValid: {validity:.4f}% --- Uniqueness: {uniqueness:.4f}% --- Novelty: {novelty:.4f}%\n')
+            
+            for i, smi in enumerate(gen_set) : 
+                print(f'{i}: {smi}')
+
+            # target = target.cpu().tolist()
+            # smiles = ''.join([inv_dic[i] for i in target])
+            # smiles = smiles.replace("<START>", "").replace("<PAD>", "").replace("<END>","")
+
+            # print(f'{smiles}')
 
     print(f'\n\nepoch : {epoch}, train loss : {train_loss / len(train_loader)}\n\n')

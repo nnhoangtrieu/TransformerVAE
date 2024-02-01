@@ -90,3 +90,8 @@ class MyDataset(torch.utils.data.Dataset) :
 
 
 
+def cal_valid(gen_list) : 
+    count = 0
+    for m in gen_list : 
+        if rdkit.Chem.MolFromSmiles(m) != None : count += 1
+    return (count / gen_list) * 100
