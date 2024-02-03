@@ -1,0 +1,10 @@
+O=C(NC1CC1)P(=O)(O)OCSc1ccc(CNC2CC2)cc1NNc1nnc(S)n1NNc1cccc2cccc(N)c12CNC(C)Cc1ccc(SC)cc1COC(C)(C)CCCC(C)CC=OO=C(O)C=C1CCCCC1COCCCN1Cc2ccccc2C1=NOc1ccc(-c2nccs2)cc1OCc1ccccc1CC(C)NO=C(NC1CC1)P(=O)(O)O
+CSc1ccc(CNC2CC2)cc1
+NNc1nnc(S)n1N
+Nc1cccc2cccc(N)c12
+CNC(C)Cc1ccc(SC)cc1
+COC(C)(C)CCCC(C)CC=O
+O=C(O)C=C1CCCCC1
+COCCCN1Cc2ccccc2C1=N
+Oc1ccc(-c2nccs2)cc1O
+Cc1ccccc1CC(C)N

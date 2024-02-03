@@ -2,6 +2,8 @@ import torch
 import torch.nn as nn 
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, random_split
+from torch.nn.utils import clip_grad_norm_
+import numpy as np
 import copy 
 import pickle
 import math 
@@ -9,6 +11,8 @@ import re
 import rdkit 
 from rdkit.Chem import MolFromSmiles as get_mol
 import argparse
+import multiprocessing
+import os
 rdkit.rdBase.DisableLog('rdApp.*')
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -25,20 +29,29 @@ parser.add_argument('--epochs', type=int, default=10, help='number of epochs')
 parser.add_argument('--batch_size', type=int, default=32, help='batch size')
 parser.add_argument('--max_len', type=int, default=40, help='longest length of input for dataset')
 
-#python train.py --d_model 256 --d_latent 128 --d_ff 256 --num_head 8 --num_layer 4 --dropout 0.1 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 4 --dropout 0.1 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 4 --dropout 0.1 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
+parser.add_argument('--kl_start', type=int, default=40, help='longest length of input for dataset')
+parser.add_argument('--kl_w_start', type=float, default=40, help='longest length of input for dataset')
+parser.add_argument('--kl_w_end', type=float, default=40, help='longest length of input for dataset')
 
-#python train.py --d_model 256 --d_latent 128 --d_ff 256 --num_head 8 --num_layer 4 --dropout 0.3 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 4 --dropout 0.3 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 4 --dropout 0.3 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
 
-#python train.py --d_model 256 --d_latent 128 --d_ff 256 --num_head 8 --num_layer 4 --dropout 0.5 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 4 --dropout 0.5 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
-#python train.py --d_model 256 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 4 --dropout 0.5 --lr 0.0005 --epochs 100 --batch_size 256 --max_len 40
+#python train.py --d_model 512 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 3 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
+#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 3 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
+
+#python train.py --d_model 512 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 4 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
+#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 4 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
+
+#python train.py --d_model 512 --d_latent 128 --d_ff 512 --num_head 8 --num_layer 5 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
+#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 5 --dropout 0.3 --lr 0.0003 --epochs 30 --batch_size 256 --max_len 35 --kl_start 5 --kl_w_start 0.0001 --kl_w_end 0.001
 
 arg = parser.parse_args()
 ######## Utils Functions ########
+def seed_torch(seed=910):
+    # random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.backends.cudnn.deterministic = True
 def clones(module, N):
     "Produce N identical layers."
     return nn.ModuleList([copy.deepcopy(module) for _ in range(N)])
@@ -78,6 +91,17 @@ def pad(smi, max_len) :
     return smi + [2] * (max_len - len(smi))
 def encode(smi, vocab) :
     return [0] + [vocab[char] for char in smi] + [1]
+def parallel_f(f, input_list) :
+    pool = multiprocessing.Pool()
+    return pool.map(f, input_list)
+def read_gen_smi(t) : 
+    smiles = ''.join([inv_vocab[i] for i in t])
+    smiles = smiles.replace("<START>", "").replace("<PAD>", "").replace("<END>","")
+    return smiles 
+def get_valid(smi) : 
+    return smi if get_mol(smi) else None 
+def get_novel(smi) : 
+    return smi if smi not in smi_list else None 
 class MyDataset(torch.utils.data.Dataset) :
     def __init__(self, token_list) :
         self.token_list = token_list
@@ -175,7 +199,18 @@ class SublayerConnection(nn.Module):
 
     def forward(self, x, sublayer):
         return x + self.dropout(sublayer(self.norm(x)))
+class KLAnnealer:
+    def __init__(self, n_epoch):
+        self.i_start = arg.kl_start
+        self.w_start = arg.kl_w_start
+        self.w_max = arg.kl_w_end
+        self.n_epoch = n_epoch
 
+        self.inc = (self.w_max - self.w_start) / (self.n_epoch - self.i_start)
+
+    def __call__(self, i):
+        k = (i - self.i_start) if i >= self.i_start else 0
+        return self.w_start + k * self.inc
 ######## Encoder ########
 class EncoderLayer(nn.Module):
     def __init__(self, size, self_attn, feed_forward, dropout):
@@ -197,7 +232,7 @@ class Encoder(nn.Module):
         self.sigma = nn.Linear(layer.size, d_latent)
     def get_z(self, mu, sigma) : 
         eps = torch.rand_like(sigma).to(device)
-        z = mu + torch.exp(sigma) * eps
+        z = mu + torch.exp(0.5 * sigma) * eps
         return z 
     
     def forward(self, x, mask):
@@ -281,13 +316,11 @@ with open('../data/chembl24_canon_train.pickle','rb') as file :
     
 
 dataset = MyDataset(token_list)
-train_set, val_set = random_split(dataset, [0.9, 0.1])
+# train_set, val_set = random_split(dataset, [0.9, 0.1])
 
-train_set = MyDataset
-train_loader = DataLoader(train_set, batch_size=arg.batch_size, shuffle=True)
-val_loader = DataLoader(val_set, batch_size=arg.batch_size, shuffle=True)
-
-
+train_loader = DataLoader(dataset, batch_size=arg.batch_size)
+# val_loader = DataLoader(val_set, batch_size=arg.batch_size, shuffle=True)
+seed_torch()
 model = Transformer(d_model=arg.d_model,
                     d_latent=arg.d_latent,
                     d_ff=arg.d_ff,
@@ -295,10 +328,13 @@ model = Transformer(d_model=arg.d_model,
                     num_layer=arg.num_layer,
                     dropout=arg.dropout,
                     vocab=vocab).to(device)
-optim = torch.optim.Adam(model.parameters(), lr = arg.lr)
+
+for i in model.parameters() : 
+    print(i)
+optim = torch.optim.Adam(model.parameters(), lr = arg.lr, weight_decay=1e-6)
 def loss_fn(pred, tgt, mu, sigma, beta) :
     reconstruction_loss = F.nll_loss(pred.reshape(-1, len(vocab)), tgt.reshape(-1))
-    kl_loss = -0.5 * torch.sum(1 + sigma - mu.pow(2) - sigma.exp()).mean()
+    kl_loss = -0.5 * torch.sum(1 + sigma - mu.pow(2) - sigma.exp()).mean() / arg.batch_size
     return  reconstruction_loss + kl_loss * beta 
 
 
@@ -310,14 +346,14 @@ def loss_fn(pred, tgt, mu, sigma, beta) :
 
 print(f'############################## TRAINING #################################')
 
+annealer = KLAnnealer(arg.epochs)
 
-for epoch in range(100) : 
+for epoch in range(arg.epochs) : 
     train_loss = 0
     val_loss = 0
-
+    beta = annealer(epoch)
     model.train()
     for i, src in enumerate(train_loader) : 
-        beta = 0 if i < len(train_loader) * 0.99 else 0.00001
         src = src.to(device)    
         src_mask = (src != 2).unsqueeze(-2)
         tgt = src
@@ -328,45 +364,69 @@ for epoch in range(100) :
         loss = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
         train_loss += loss.item()
         loss.backward()
+        clip_grad_norm_(model.parameters(), 5)
         optim.step()
         optim.zero_grad()
     
     model.eval()
-    for src in val_loader : 
-        beta = 0 if i < len(val_loader) * 0.99 else 0.00001
-        src = src.to(device)    
-        src_mask = (src != 2).unsqueeze(-2)
-        tgt = src
-        tgt_mask = get_mask(tgt[:, :-1], vocab)
-        out, mu, sigma = model(src, tgt[:, :-1], src_mask, tgt_mask)
-        loss = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
-        val_loss += loss.item()
+    # for src in val_loader : 
+    #     beta = 0 if i < len(val_loader) * 0.99 else 0.00001
+    #     src = src.to(device)    
+    #     src_mask = (src != 2).unsqueeze(-2)
+    #     tgt = src
+    #     tgt_mask = get_mask(tgt[:, :-1], vocab)
+    #     out, mu, sigma = model(src, tgt[:, :-1], src_mask, tgt_mask)
+    #     loss = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
+    #     val_loss += loss.item()
         
 
     NUM_GEN = 500
-    for _ in range(60) : 
+    gen_mol = torch.empty(0).to(device)
+    
+    for _ in range(60) :
+
+        src_z = torch.randn(NUM_GEN, max_len, arg.d_latent).to(device)
+        src_mask = torch.ones(NUM_GEN, 1, max_len).to(device)
+        tgt = torch.zeros(NUM_GEN, 1, dtype = torch.long).to(device)
+        tgt_mask = get_mask(tgt, vocab).to(device)
         
-    src_z = torch.randn(NUM_GEN, max_len, arg.d_latent).to(device)
-    src_mask = torch.ones(NUM_GEN, 1, max_len).to(device)
-    tgt = torch.zeros(NUM_GEN, 1, dtype = torch.long).to(device)
-    tgt_mask = get_mask(tgt, vocab).to(device)
+        for _ in range(max_len - 1) :
+            out = model.inference(src_z, tgt, src_mask, tgt_mask)
+            _, idx = torch.topk(out, 1, dim = -1)
+            idx = idx[:, -1, :]
+            tgt = torch.cat([tgt, idx], dim = 1)
+        
+        gen_mol = torch.cat((gen_mol, tgt), dim =0)
     
-    for _ in range(max_len - 1) :
-        out = model.inference(src_z, tgt, src_mask, tgt_mask)
-        _, idx = torch.topk(out, 1, dim = -1)
-        idx = idx[:, -1, :]
-        tgt = torch.cat([tgt, idx], dim = 1)
-    
-    count = 0 
-    for t in tgt : 
-        t = t.tolist()
-        smiles = ''.join([inv_vocab[i] for i in t])
-        smiles = smiles.replace("<START>", "").replace("<PAD>", "").replace("<END>","")
-        valid = "Not"
-        valid = "Valid" if get_mol(smiles) else "Not"
-        count += 1 if get_mol(smiles) else 0
-        print(f'{smiles} - {valid}')
+    gen_mol = gen_mol.tolist()
+    gen_mol = parallel_f(read_gen_smi, gen_mol)
+    valid_mol = parallel_f(get_valid, gen_mol)
+    valid_mol = [m for m in valid_mol if m is not None]
+    validity = (len(valid_mol) / 30000) * 100 
+
+    unique_mol = set(valid_mol)
+    try : 
+        unique = (len(unique_mol) / len(valid_mol)) * 100 
+    except : 
+        unique = 0
+
+    novel_mol = parallel_f(get_novel, valid_mol)
+    novel_mol = [m for m in novel_mol if m is not None]
+    novelty = (len(novel_mol) / len(unique_mol)) * 100
+     
+    unique_novel_mol = set(novel_mol)
 
 
-    print(f"epoch {epoch + 1} --- train loss: {train_loss:4f} --- val loss: {val_loss:4f} --- validity: {(count / NUM_GEN)*100:.4f} ")
+
+    with open(f'gen_mol/{d_model}_{d_latent}_{d_ff}_{num_head}_{num_layer}_{dropout}_{lr}_{epochs}_{batch_size}_{max_len}_{kl_start}_{kl_w_start}_{kl_w_end}.txt', 'a') as file :
+        for i, m in enumerate(unique_novel_mol) :
+            file.write(f'{i+1}. {m}\n')
+        file.write(f"epoch {epoch + 1} --- train loss: {train_loss:3f}\n")
+        file.write(f'validity: {validity:.2f}%, novelty: {novelty:.2f}%, unique: {unique:.2f}%')
+
+    for i, m in enumerate(unique_novel_mol) :
+        print(f'{i+1}. {m}')
+
+    print(f"epoch {epoch + 1} --- train loss: {train_loss:3f}")
+    print(f'validity: {validity:.2f}%, novelty: {novelty:.2f}%, unique: {unique:.2f}%')
     
