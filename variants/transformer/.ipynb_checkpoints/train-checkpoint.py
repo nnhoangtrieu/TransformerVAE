@@ -434,8 +434,10 @@ for epoch in range(arg.epochs) :
 
 
         with open(f'./genmol/{arg.d_model}_{arg.d_latent}_{arg.d_ff}_{arg.num_head}_{arg.num_layer}_{arg.dropout}_{arg.epochs}_{arg.batch_size}_{arg.max_len}_{arg.kl_start}_{arg.kl_w_start}_{arg.kl_w_end}.txt', 'a') as file :
-            if epoch == 0 : 
-                file.write(f'model config: {arg}\n\n\n\n')
+        file.write("config:\n")
+        file.write(f"d_model: {arg.d_model}\td_latent: {arg.d_latent}\td_ff: {arg.d_ff}\tnum_head: {arg.num_head}\tnum_layer: {arg.num_layer}\n")
+        file.write(f"dropout: {arg.dropout}\tlr: {arg.lr}\tepochs: {arg.epochs}\tbatch_size: {arg.batch_size}\tmax_len: {arg.max_len}\n")
+        file.write(f"kl_start: {arg.kl_start}\tkl_w_start: {arg.kl_w_start}\tkl_w_end: {arg.kl_w_end}")
 
             for i, m in enumerate(unique_novel_mol) :
                 file.write(f'{i+1}. {m}\n')
