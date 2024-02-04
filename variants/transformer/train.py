@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn 
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils.tensorboard import SummaryWriter
 from torch.nn.utils import clip_grad_norm_
 import numpy as np
 import copy 
@@ -29,25 +30,50 @@ parser.add_argument('--epochs', type=int, default=10, help='number of epochs')
 parser.add_argument('--batch_size', type=int, default=32, help='batch size')
 parser.add_argument('--max_len', type=int, default=40, help='longest length of input for dataset')
 
-parser.add_argument('--kl_start', type=int, default=40, help='longest length of input for dataset')
+# parser.add_argument('--kl_start', type=int, default=40, help='longest length of input for dataset')
 parser.add_argument('--kl_w_start', type=float, default=40, help='longest length of input for dataset')
 parser.add_argument('--kl_w_end', type=float, default=40, help='longest length of input for dataset')
+parser.add_argument('--kl_cycle', type=int, default=40, help='longest length of input for dataset')
+parser.add_argument('--kl_ratio', type=float, default=40, help='longest length of input for dataset')
+
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 4 --kl_ratio 0.7
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 5 --kl_ratio 0.7
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 6 --kl_ratio 0.7
+
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 4 --kl_ratio 0.5
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 5 --kl_ratio 0.5
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 6 --kl_ratio 0.5
+
+
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 4 --kl_ratio 0.7
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 5 --kl_ratio 0.7
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 6 --kl_ratio 0.7
+
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 4 --kl_ratio 0.5
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 5 --kl_ratio 0.5
+#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 6 --kl_ratio 0.5
 
 
 
-#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 6 --dropout 0.1 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
-#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.1 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 4 --kl_ratio 0.7
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 5 --kl_ratio 0.7
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 6 --kl_ratio 0.7
+
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 4 --kl_ratio 0.5
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 5 --kl_ratio 0.5
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.003 --kl_cycle 6 --kl_ratio 0.5
 
 
-#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 6 --dropout 0.3 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
-#python train.py --d_model 512 --d_latent 128 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.3 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 4 --kl_ratio 0.7
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 5 --kl_ratio 0.7
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 6 --kl_ratio 0.7
 
-#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 6 --dropout 0.1 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
-#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.1 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 4 --kl_ratio 0.5
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 5 --kl_ratio 0.5
+#python train.py --d_model 384 --d_latent 384 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.5 --lr 0.0003 --epochs 40 --batch_size 128 --max_len 40 --kl_w_start 0.0003 --kl_w_end 0.01 --kl_cycle 6 --kl_ratio 0.5
 
 
-#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 6 --dropout 0.3 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
-#python train.py --d_model 512 --d_latent 256 --d_ff 1024 --num_head 8 --num_layer 8 --dropout 0.3 --lr 0.0003 --epochs 48 --batch_size 128 --max_len 100 --kl_start 5 --kl_w_start 0.0003 --kl_w_end 0.1
+
 
 
 
@@ -115,6 +141,34 @@ def get_valid(smi) :
     return smi if get_mol(smi) else None 
 def get_novel(smi) : 
     return smi if smi not in smi_list else None 
+def frange_cycle_sigmoid(start, stop, n_epoch, n_cycle=4, ratio=0.5):
+    L = np.ones(n_epoch)  * arg.kl_w_end
+    period = n_epoch/n_cycle
+    step = (stop-start)/(period*ratio) # step is in [0,1]
+    
+    # transform into [-6, 6] for plots: v*12.-6.
+
+    for c in range(n_cycle):
+
+        v , i = start , 0
+        while v <= stop:
+            L[int(i+c*period)] = 1.0/(1.0+ np.exp(- (v*12.-6.)))
+            v += step
+            i += 1
+    return L 
+def frange_cycle_linear(start, stop, n_epoch, n_cycle=4, ratio=0.5):
+    L = np.ones(n_epoch) * stop
+    period = n_epoch/n_cycle
+    step = (stop-start)/(period*ratio) # linear schedule
+
+    for c in range(n_cycle):
+
+        v , i = start , 0
+        while v <= stop and (int(i+c*period) < n_epoch):
+            L[int(i+c*period)] = v
+            v += step
+            i += 1
+    return L  
 class MyDataset(torch.utils.data.Dataset) :
     def __init__(self, token_list) :
         self.token_list = token_list
@@ -347,7 +401,7 @@ optim = torch.optim.Adam(model.parameters(), lr = arg.lr, weight_decay=1e-6)
 def loss_fn(pred, tgt, mu, sigma, beta) :
     reconstruction_loss = F.nll_loss(pred.reshape(-1, len(vocab)), tgt.reshape(-1), ignore_index=vocab['<PAD>'])
     kl_loss = -0.5 * torch.sum(1 + sigma - mu.pow(2) - sigma.exp()).mean() / arg.batch_size
-    return  reconstruction_loss + kl_loss * beta 
+    return  reconstruction_loss + kl_loss * beta, reconstruction_loss, kl_loss
 
 
 
@@ -358,12 +412,14 @@ def loss_fn(pred, tgt, mu, sigma, beta) :
 
 print(f'############################## TRAINING #################################')
 
-annealer = KLAnnealer(arg.epochs)
-
+# annealer = KLAnnealer(arg.epochs)
+annealer = frange_cycle_linear(arg.kl_w_start, arg.kl_w_end, arg.epochs, arg.kl_cycle, arg.kl_ratio)
+writer = SummaryWriter()
+writer.add_text('model_config', f'{arg}')
 for epoch in range(arg.epochs) : 
-    train_loss = 0
-    val_loss = 0
-    beta = annealer(epoch)
+    train_loss, recon_loss, kl_loss = 0, 0, 0
+
+    beta = annealer[epoch]
     model.train()
     for i, src in enumerate(train_loader) : 
         src = src.to(device)    
@@ -373,28 +429,21 @@ for epoch in range(arg.epochs) :
 
         
         out, mu, sigma = model(src, tgt[:, :-1], src_mask, tgt_mask)
-        loss = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
+        loss, recon, kl = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
         train_loss += loss.detach().item()
         loss.backward()
         clip_grad_norm_(model.parameters(), 5)
         optim.step()
         optim.zero_grad()
+
+        recon_loss += recon.detach().item()
+        kl_loss += kl.detach().item()
     
     model.eval()
-    # for src in val_loader : 
-    #     beta = 0 if i < len(val_loader) * 0.99 else 0.00001
-    #     src = src.to(device)    
-    #     src_mask = (src != 2).unsqueeze(-2)
-    #     tgt = src
-    #     tgt_mask = get_mask(tgt[:, :-1], vocab)
-    #     out, mu, sigma = model(src, tgt[:, :-1], src_mask, tgt_mask)
-    #     loss = loss_fn(out, tgt[:, 1:], mu, sigma, beta)
-    #     val_loss += loss.item()
-        
 
     NUM_GEN = 500
     gen_mol = torch.empty(0).to(device)
-    
+
     with torch.no_grad() : 
         for _ in range(60) :
 
@@ -433,7 +482,7 @@ for epoch in range(arg.epochs) :
         unique_novel_mol = set(novel_mol)
 
 
-        with open(f'./genmol/{arg.d_model}_{arg.d_latent}_{arg.d_ff}_{arg.num_head}_{arg.num_layer}_{arg.dropout}_{arg.epochs}_{arg.batch_size}_{arg.max_len}_{arg.kl_start}_{arg.kl_w_start}_{arg.kl_w_end}.txt', 'a') as file :
+        with open(f'./cycle/{arg.d_model}_{arg.d_latent}_{arg.d_ff}_{arg.num_head}_{arg.num_layer}_{arg.dropout}_{arg.epochs}_{arg.batch_size}_{arg.max_len}_{arg.kl_w_start}_{arg.kl_w_end}_{arg.kl_cycle}_{arg.kl_ratio}.txt', 'a') as file :
             if epoch == 0 : 
                 file.write(f'model config: {arg}\n\n\n\n')
 
@@ -443,9 +492,15 @@ for epoch in range(arg.epochs) :
             file.write(f'validity: {validity:.2f}%, novelty: {novelty:.2f}%, unique: {unique:.2f}%')
             file.write('\n\n\n\n')
 
-        for i, m in enumerate(unique_novel_mol) :
-            print(f'{i+1}. {m}')
+    writer.add_scalar('train_loss', train_loss / len(train_loader), epoch)
+    writer.add_scalar('recon_loss', recon_loss / len(train_loader), epoch)
+    writer.add_scalar('kl_loss', kl_loss / len(train_loader), epoch)
 
-    print(f"epoch {epoch + 1} --- train loss: {train_loss:3f}")
-    print(f'validity: {validity:.2f}%, novelty: {novelty:.2f}%, unique: {unique:.2f}%')
+    writer.add_scalar('validity', validity, epoch)
+    writer.add_scalar('novelty', novelty, epoch)
+    writer.add_scalar('unique', unique, epoch)
+
+
+    print(f"epoch {epoch + 1} \n train loss: {train_loss / len(train_loader):3f} \n recon_loss: {recon_loss / len(train_loader):3f} \n kl_loss: {kl_loss / len(train_loader):3f} \n beta: {beta}")
+    print(f'validity: {validity:.2f}%, novelty: {novelty:.2f}%, unique: {unique:.2f}%\n')
     

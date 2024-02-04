@@ -1,0 +1,1269 @@
+model config: Namespace(d_model=512, d_latent=128, d_ff=1024, num_head=8, num_layer=6, dropout=0.5, lr=0.0003, epochs=32, batch_size=128, max_len=40, kl_start=10, kl_w_start=0.0003, kl_w_end=0.01)
+
+
+
+1. COc1cccc2c1cc1cc1CC2O
+2. COc1cccc(F)c1CC
+3. COc1cccc(F)c1CCC
+4. O=C1cccccc1N
+5. O=C(c1ccccccc1)OC
+6. O=Cc1cccc(F)c1
+7. COc1ccccc(F)C1CC
+8. COc1ccccc1c1c2CC2cc1O
+9. COc1ccccc1CO
+10. O=Cc1ccccc1NC
+11. COc1cccc2c1cc1CC2cc1C1cc1
+12. COc1ccccc1c2c1CC2cc1O
+13. COc1cccc2cc1c1cc1CC2
+14. COc1ccc2cc1cc1CCC2cc1
+15. COc1ccccc1O
+16. COc1cccc2cc1c1C2cc1O
+17. COc1ccccc1OO
+18. O=C1ccccc(F)c1CC
+19. O=Cc1ccccc1NN
+20. COc1ccc2ccc1c1C2cc1O
+21. COc1cccc2c1cc1CC2cc1
+22. O=Cc1ccccc1c1ccccc1
+23. COc1ccc2cc1cc1CC2cc1
+24. O=Cc1ccccc1c1ccc1
+25. COc1ccccc(F)C1
+26. O=Cc1ccccc1N1cc1
+27. COc1cccc2c1cc1CC2cc1O
+28. COc1ccccc1C
+29. COc1cccc(F)c1C
+30. COc1ccccc(F)C1C
+31. O=Cc1ccc(F)cc1C
+32. O=Cc1cccc(F)c1C
+33. COc1ccccc1c1c2CC2cc1
+34. COc1cccc2cc1c1C2cc1C1cc1
+35. O=c1ccccc(Cl)c1
+36. O=Cc1cccc(F)c1CC
+37. O=Cc1ccccc1N
+38. O=c1ccccc(O)c1
+39. O=C1ccccc(F)c1C
+40. COc1ccccc1CCO
+41. O=Cc1ccccc1
+epoch 1 --- train loss: 3732.859342
+validity: 15.46%, novelty: 97.62%, unique: 0.91%
+
+
+
+1. Oc1c2ccccc1cc1ccc2c(C)c1
+2. Oc1c2ccccc1ccc1ccc2c1
+3. Oc1c2ccccc1cc1c(-ccccc2)n1
+4. O=Cc1cc(-c2ccccccco2)n1
+5. Oc1c2ccccc1ccc1cc2cc1
+6. Oc1c2ccccc1cc1ccc2nc1
+7. Oc1c2cccccc1cc1cc2cc1
+8. Oc1c2ccccc1cc1ccc2c(C)n1
+9. Oc1c2ccccc1ccc1c(-cccc2)n1
+10. O=c1c(-c2ccccccccc2)n1
+11. Oc1c2cccccc1cc1cc2cc1C
+12. Nc1ccc(-c2ccccco2)C1
+13. Oc1c2ccccc1cc1ccc2cc1
+14. O=c1c2cccccc(-cccc2)n1
+epoch 2 --- train loss: 2435.176094
+validity: 0.05%, novelty: 100.00%, unique: 87.50%
+
+
+
+1. c1cccc(-c2ccccc2)n1=O
+2. COc1ccc2ccc2cc2nc1ccc2
+3. O=Cc1ccc2ccccc2ccc1
+4. Oc1ccc2cccc2c1=N
+5. Oc1ccc2ccc(-ccc2ccnc1)
+6. Nc1c2ccccc(F)c1cccccc2
+7. Oc1ccc2cccc2Ccc1
+8. Nc1c2cccccc(C)c1c1cc1cc2
+9. Cc1ccc2c(N)ccc1c2=O
+10. O=c1c2cccccc2s1C
+11. Nc1c2cccccc2oc1=O
+12. Cc1cc2ccc2nc(=O)c1
+13. O=Cc1cccc2cc2ccn1
+14. Nc1c2ccccc2ccn1=O
+15. O=Cc1ccc2cccc2cc2cc1cc2
+16. O=c1c2ccccccc(-cc2)o1
+17. O=c1c2cccccn1Ccc2
+18. O=Cc1ccc2cccc1cc2
+19. O=c1c2ccc(-ccccc2)n1
+20. COc1ccc2cc2nc1c1ccc1
+21. COc1c2ccccc2c2cc2cc1
+22. O=Cc1ccc2cc2ccc(F)c1
+23. Nc1c2ccc(-ccc2ccnc1)C
+24. O=c1c2ccccccn1Cc2
+25. Oc1c2ccccc(C)cc2c1
+26. c1ccc(-c2cccc2ccnc1)=O
+27. O=c1c2cccccc(-ccc2)o1
+28. Oc1ccc2ccccc2nc1=N
+29. O=Cc1ccc2ccc2c1
+30. Oc1cccc2cccc2c2ccc1ccc2
+31. Oc1cccc2ccc(-cc2ccnc1)C
+32. Oc1c2cccccc2n1Cc1ccc1
+33. Oc1cc2cccc(-cccn2)=C1
+34. O=c1c2cccc(-ccc2cccn1)C
+35. Oc1cccc(-c2cccc2ccn1)=N
+36. Nc1nc2cccc2c(C)c1=O
+37. Cc1ccc2ccc(F)cc1ccccc2
+38. O=c1c2ccccccc2o1
+39. O=Cc1c2ccccc2ccc2ccc1ccc2
+40. O=Cc1ccc2ccc2nc(F)c1
+41. Oc1c2ccccccc1c2c2ccc2
+42. Oc1ccc2cccc2cc1
+43. Oc1ccc2cccc(-cc2cccn1)
+44. Oc1ccc2ccc2nc(C)c1
+45. Oc1ccc2cccc2cc=Ncc1
+46. O=C(c1c2ccccccccc2)n1
+47. Cc1c2cccc2c(=O)cc1
+48. Oc1c2cccccc(-ccc2)n1
+49. O=Cc1cccc2ccc2cc1
+50. O=c1c2cccccc(F)c1cc2
+51. Oc1cc2ccccc(N)c1c2
+52. c1cccc2ccc2cccccccc1
+53. Cc1ccc2ccc2=NOcc1
+54. O=Cc1ccc2ccc2ncc1
+55. Oc1c2ccccc(-ccc2)=1
+56. Oc1cccc(-c2ccc2ccn1)C
+57. Cc1cc2ccc2cc2cccc1cc2
+58. O=c1c2ccccc(-cccco2)1
+59. Oc1cccc2cccc2ccc1
+60. O=C(Nc1c2ccccccccc2)n1
+61. Oc1c2cccccc(C)cc1cc2
+62. Cc1cc2ccc2c2ncc2cc1
+63. Oc1ccccc(-c2ccc2)C1
+64. O=c1c2ccccccc2cccc1
+65. Oc1cc2ccccc2c(N)c1
+66. Cc1cc2cc2c(=O)ccn1
+67. Oc1c2ccccc(C)c1cc2
+68. Oc1c2ccccccc2c2c1ccc2
+69. Cc1ccc2cc2oc1=O
+70. COc1ccc2cc2c(=N)cc1
+71. O=Cc1cc2ccccc1cc2
+72. Oc1cccc2ccc2c(N)c1
+73. COc1ccc2cc2c(F)c1
+74. Oc1c2ccccc(NC)cc1ccc2
+75. Nc1c2ccccc(-ccc2ccn1)=O
+76. Nc1c2cccccc2nc1c1ccc1
+77. Oc1cccc2ccc2n1C=N
+78. Cc1cc2ccc2cnc1=O
+79. Oc1cccc(-c2ccccc2)=N1
+80. O=c1c2cccccc(-ccc2cccn1)
+81. Oc1ccc(-c2ccccc2)=Cc1
+82. Cc1cc(Nc2ccccc2)n1=O
+83. Oc1c2ccccccc2c(C)=Nc1
+84. COc1ccc(N)cc1
+85. O=Cc1ccc2ccc2n1
+86. O=C1ccc2ccc2ccc2c1cc2
+87. COc1ccc2ccc2c=cc1
+88. O=Cc1ccc2ccc2cc(F)n1
+89. Cc1ccc2cc2c(=O)cccc1
+90. O=Cc1ccc2cccc2cc1
+91. O=Cc1c2cccccc1cc2
+92. O=c1c2ccccc(-ccc2ccn1)
+93. O=c1c2ccccccc(N)c1ccc2
+94. Oc1cccc2ccc1cc2n1cc1
+95. Oc1cccc2cccc2Cc1
+96. O=c1c2ccccc(C)cc2cc1
+97. O=c1c2ccccccc2c(N)c1
+98. O=c1c2ccccc(N)cc1cc2
+99. O=c1c2ccccccc2c(C)c1
+100. Oc1c2cccccc2n1C=N
+101. Nc1c2cccccc2cc2cc1cc2
+102. Nc1c2ccccc(-cc2cccn1)=O
+103. Cc1cccc2cc2=NOcc1
+104. COc1cc2ccc2c(N)c1
+105. Nc1c2ccccc(C)c1c1c2c2cc1c2
+106. Nc1c2cccccc2nc1CCl
+107. Oc1c2cccccc1cc-2
+108. Oc1ccc2cccc1cc2n1cc1
+109. Nc1c2ccccc(-cccc2)Cc1
+110. O=Cc1cc2ccc2c(F)c1
+111. Oc1ccc2cccc2cc2nc1cc2
+112. Nc1c2ccccc(-cc2ccn1)C
+113. Oc1cccc2ccc1cc2C=N
+114. Nc1c2cccccc2nc1C=O
+115. O=c1c2cccccc(C)c1c1cc1ccc2
+116. Cc1ccc2c(-cccc2)n1=O
+117. Oc1cc2ccccc1nc2
+118. Nc1c2ccccc(-ccc2ncc1)=O
+119. Nc1c2cccccc2C=cc1
+120. Oc1ccc2ccc(N)c1cc2
+121. Nc1c2ccccc(-cccc2)n1
+122. c1cc(-c2ccccc2ccnc1)=O
+123. O=c1c2cccccc(C)c1cc2
+124. Oc1cccc2ccc2c(-ccccn1)
+125. Oc1ccc2cccc2c(N)Cc1
+126. Cc1c2cccc2c(=NO)cc1
+127. O=Cc1cc2cccc2nc(F)c1
+128. Nc1c2ccccc(C)c1c1c2c2c1cc2
+129. Cc1ccc(F)ccc1=O
+130. Cc1ccc2cc2cc(=O)c1
+131. Nc1c2cccc(-ccc2ccn1)C=O
+132. c1ccc(-c2ccccc2)n1N
+133. Nc1c2cccccc(F)c1cc1cc2ccc1
+134. Oc1cccc(-c2cccc2nc1)C
+135. Oc1c2cccccc1cc2s1ccc1
+136. O=c1c2cccccc(N)c1c1cc1ccc2
+137. Oc1ccc2cccc1cc2s1Cccc1
+138. O=c1c2ccccc(-ccc2)n1
+139. O=c1c2ccccccc2s1
+140. O=C1c2ccccc2c(Cl)c1
+141. Oc1c2ccccc(F)c1cc2
+142. Oc1cccc2ccc(-ccc2)c1
+143. Oc1c2cccc(-ccc2ncc1)C
+144. Nc1c2cccccc2cccccc1
+145. Oc1ccc2cccc2nc1
+146. Oc1cccc(-c2cccc2ccnc1)C
+147. Nc1c2cccccc2n1c1ccc1
+148. O=c1c2ccccc(-ccc2ccn1)C
+149. Oc1c2cccccc2cc2nc1Ccc2
+150. Oc1cc2ccccc2c=ccc1
+151. Oc1ccc2cccc2nc1C=N
+152. Oc1ccc2ccccc2ccc1
+153. COc1ccc2cc2cc(N)nc1
+154. Oc1cccc2cc(-ccc2ccnc1)C
+155. Oc1cccc(-c2cccc2ncc1)=N
+156. Cc1ccc2cc2cnc1=O
+157. O=c1c2cccc(-ccc2cccn1)
+158. COc1cc2ccc2c(=N)cc1
+159. Oc1ccc2cccc(N)cc1cc2
+160. Cc1ccc2cc2c(=O)cc1
+161. Oc1c2ccccc(N)cc1ccc2
+162. Oc1c2cccccc2cc2n1cc2
+163. O=c1c2cccc(-cccc2)n1
+164. COc1ccc2cccc1cc1ccc1ccc2
+165. Nc1c2cccc(F)cc1cc2
+166. COc1cccc2ccc2cccc1
+167. Oc1ccc2ccc2ncc1C
+168. Oc1ccccc(-c2ccccc2)=c1
+169. Oc1ccc2cccc2c(N)c1
+170. Nc1c2cccccc2cc1
+171. Cc1ccc2cc2nc(=O)c1
+172. Nc1nc2ccccc(-cccc2)1
+173. Cc1ccc2cccc2cccc1
+174. Oc1ccc2ccc(-cccc2)=N1
+175. O=Cc1ccc2cc2c(F)c1
+176. Oc1cccc2ccc2nc1C
+177. COc1ccc2cc2c(N)c1
+178. Nc1c2cccccc1cc1cc1cc2
+179. O=C(c1cc2cccccc2ccc1)
+180. O=Cc1cc2ccc2c(N)c1
+181. Cc1ccc2cc2oc1=N
+182. COc1cc2cccc2cc2cc1ccc2
+183. COc1c2cccc(-ccccc2)n1
+184. Oc1cccc2ccc2cc=Ccccc1
+185. O=c1c2ccccc(-ccc2ncc1)
+186. Oc1ccc2ccc2nc(N)c1
+187. COc1cc2ccccc2c2cc1ccc2
+188. Oc1cccc2cc(-cccc2)n1
+189. O=Cc1ccc2ccc(F)c1cc2
+190. O=c1c2cccc(N)ccc1cc2
+191. O=Cc1cc2cccc2cc2c1cc2
+192. O=c1c2cccc(-cccccc2)n1
+193. COc1ccc2cc2nc1
+194. O=Cc1c2ccccc2ncc1
+195. Oc1c2cccccc1cc2
+196. Cc1c2ccc2nc1=O
+197. Oc1c2cccccc1cc2n1cc1
+198. Cc1cc2ccc2ncc1=N
+199. Oc1cccc(Cc2ccccc2)n1
+200. Oc1c2cccccc2Ccc1
+201. O=c1c2cccccccc2c1
+202. Oc1c2cccccc2c2c1cc2
+203. O=Cc1cc2ccc2cco1
+204. Oc1c2ccccccc2c2ccc1ccc2
+205. O=Cc1ccc2cccc2o1
+206. O=c1c2cccccc(-cccc2)n1
+207. Cc1c2cccc2c(F)cc1=O
+208. O=c1c2cccccc(-cc2)c1
+209. Nc1c2cccc(-cccc2)C1
+210. Oc1c2ccccccc2cc2cc1ccc2
+211. O=Cc1ccc2cc2coc1
+212. COc1cc2cc2c(F)cc1
+213. O=c1c2cccccccc2ccc1
+214. Oc1cccc2cc(-cccc2)=N1
+215. Nc1c2ccccc(-c2cccnc1)=O
+216. Oc1c2cccccc2cc2nc1cccc2
+217. Oc1ccc2cccc(-ccc2)c1
+218. O=Cc1c2ccccc2n1
+219. O=C(N)c1ccccc1
+220. O=Cc1ccc2ccc2co1
+221. O=Cc1cccc2cccc2ccc1
+222. O=Cc1c2ccccc2co1
+223. Oc1cccc(-c2cccccn1)=c2
+224. Oc1ccc2cccc(-ccc2)n1
+225. Oc1cc2ccccc2nc1
+226. Oc1ccc2ccccc2n1
+227. Cc1ccc(=NO)c2cccc1cc2
+228. Nc1c2cccccc2nc1
+229. Oc1c2ccccccc2nc2cc1ccc2
+230. Nc1c2ccc(-cccc2cnc1)C
+231. Cc1ccc2ccc2c(=O)ccc1
+232. O=Cc1cc2cccccc2c1
+233. Cc1c2cccc(=O)ccc1cc2
+234. O=c1c2cccccc(N)c2cc1
+235. Oc1ccc2ccc(F)c1cc2
+236. O=Cc1ccc2cc2c(N)c1
+237. Nc1c2cccc(C)cc1c1c2cc1
+238. Nc1c2cccc(-ccccc2)n1
+239. O=c1c2ccccc(-cc2ccnc1)
+240. Oc1ccc2cc(-ccc2ncc1)C
+241. Oc1ccc2cc(-ccccc2)n1
+242. O=Cc1ccc2ccc2cc(F)c1
+243. COc1c2ccc2c(N)cc1
+244. O=c1c2ccccccc2c2s1cccc2
+245. Oc1cccc(-c2cccc2cccn1)
+246. O=Cc1cccccc(F)c1
+247. Oc1cc2ccccc(-cc2ccnc1)
+248. Nc1c2cccc(-ccc2cnc1)C
+249. Oc1ccc2cccc2nc1C
+250. Nc1c2ccccc(-cc2ncc1)C
+251. Oc1c2cccccc2nc1C
+252. Oc1c2ccccccc2c2cc1cc2
+253. Oc1c2cccccc2c=Cccc1
+254. Oc1ccc2cc(-ccc2ccn1)C
+255. O=c1c2ccccc(-ccccc2)n1
+256. Oc1c2cccccc(-ccc2)c1
+257. O=c1c2ccccccc1cc2
+258. O=Cc1ccc2cc2cco1
+259. COc1cc2cccc2c2cc2cc1
+260. O=Cc1ccccc2cc2nc1
+261. O=Cc1cccc(N)c1
+262. Cc1cc2cccc2cc2cc2ccc1
+263. Oc1ccc(-c2cccc2cnc1)C
+264. Oc1ccc2cccc2nc(-cccc1)
+265. O=Cc1cc2cccc2co1
+266. COc1ccc(F)cc1
+267. Nc1c2cccccc2n1C=O
+268. Oc1c2cccccc1cc2C
+269. Oc1ccc2ccccc2cc2cc1ccc2
+270. Oc1ccc2cccc(-cc2ccnc1)
+271. Oc1cc2cccc(N)c1cc2
+272. O=Cc1c2ccccccc2ccc1
+273. O=Cc1cc2cccccc1cc1cc1ccc2
+274. Oc1c2cccccc2nc1
+275. O=Cc1cc2cccc2cc(N)c1
+276. Oc1c2ccccc(N)c1cc2
+277. Oc1ccc2cccc2c=Nccc1
+278. Cc1cc2ccc2c(=O)cc1
+279. O=Cc1cc2ccccc2c(F)c1
+280. Oc1c2cccccc2n1C
+281. Oc1ccc(-c2ccccc2ccn1)=N
+282. O=c1c2ccccccc2Ccc1
+283. O=c1c2cccccc(N)c1cc2
+284. O=Cc1cc2cccccc2ccc1
+285. COc1ccc2cccc2cc1
+286. Oc1c2ccccccc2c2nc1cccc2
+287. Oc1c2ccccc(-ccc2ccnc1)
+288. COc1c2cccc2c2cc2c(=N)c1
+289. O=Cc1cc2cccc2ncc1
+290. Oc1c2ccccc(-cccc2)n1
+291. O=c1c2ccccccc2c2c1cc2
+292. Oc1ccc2cccc2cc2cc1cc2
+293. Oc1c2cccccc(-cc2ccnc1)C
+294. O=c1c2ccccc(C)cc1c1cc1ccc2
+295. Nc1c2cccc(-cccc2)1
+296. Oc1c2cccccc2c(N)c1
+297. O=c1c2cccccc(N)n1c2
+298. Oc1ccc2ccc(NC)cc1c2
+299. COc1ccc2cc2nc(=N)c1
+300. COc1ccc2ccc2cc(F)c1
+301. O=c1c2ccccccc(-ccc2)n1
+302. O=c1c2ccccc(-cc2cccn1)
+303. Oc1cccc(N2ccccc2nc1)C
+304. Oc1c2cccccc1cc2n1cccc1
+305. O=Cc1ccc2cccc1cc1ccc1ccc2
+306. COc1ccc2cc(F)cc1cc2
+307. O=Cc1ccc2ccc(-cccco2)n1
+308. Oc1c2cccccc1cc2n1Ccc1
+309. O=c1c2ccccc(-cc2cccn1)C
+310. Cc1c2cccc2nc(=O)c1
+311. Oc1c2cccccc2nc1c2ccc2
+312. O=c1c2ccccc(-cc2cccc1)C
+313. Oc1ccccc2cc2c=Nccc1
+314. COc1ccc2ccc2c(=N)c1
+315. Cc1cc2ccc(=O)ccc1cc2
+316. O=Cc1cc2ccccc2cc1
+317. Oc1cccc2ccc(-ccc2)n1
+318. COc1ccc2cc2cc(=N)c1
+319. Nc1c2ccccc(-cc2cccc1)=O
+320. Nc1c2ccccc2nc1=O
+321. Oc1c2cccccc(C)c1ccc2
+322. Oc1c2cccc(Cccc2)n1
+323. COc1ccc(=N)ccc1
+324. Cc1ccc2ccc2n1=O
+325. COc1ccc2cccc2cccc1
+326. Oc1c2cccccc2ncc2c1cc2
+327. O=Cc1cc2cccc2c1
+328. Oc1cc2cccc(C)c1cc2
+329. Oc1ccccc2ccc2ccc1
+330. Nc1c2cccccc2n1C
+331. Oc1ccc2cccc1cc2n1Ccc1
+332. Oc1cc2cccc(-cccc2)n1
+333. O=c1c(-c2ccccccccc2)n1
+334. Oc1c2cccccc(-cc2ccn1)=N
+335. O=c1c2ccccc(C)cc1cc2
+336. Oc1cccc2cc(-ccc2ccn1)=N
+337. Cc1cccc(F)cc1=Nc1ccc1
+338. Cc1ccc2ccc2Sccc1
+339. O=Cc1cc2cccc1c2n1cc1
+340. Oc1ccc2cccc2c=ccc1
+341. Cc1ccc2cc2c(=O)cccn1
+342. O=c1c2ccccc(-ccc2ncc1)C
+343. Cc1ccc2cc2ncc1=O
+344. Oc1c2cccccc2cc2cc1cc2
+345. COc1ccc2ccc2cc2cc1ccc2
+346. COc1ccc2cc2cc2cc2cc1
+347. Oc1cc2ccccc(-ccc2)n1
+348. Oc1c2ccccc(-cc2ccn1)C
+349. O=c1c2ccccc(N)c1ccc2
+350. c1cccc(N2cccc2ccccn1)C
+351. O=c1c2cccccccc2c2c1ccc2
+352. Nc1c2cccc(-cccc2)n1C
+353. Cc1cc2ccc2c2cc(=O)cc1cc2
+354. Oc1c2cccc(-ccc2ccn1)C
+355. Oc1cccc2cccc2cc2cc1ccc2
+356. Oc1c2ccccccc2n1
+357. Oc1c2cccccc2cc2n1Ccc2
+358. Oc1c2ccccccc2ccc1
+359. O=c1c2cccccccn1cc2
+360. Oc1c2cccccc2cc=Ccc1
+361. O=Cc1c2cccccc2cc1
+362. Nc1c2cccccc2nc1C
+363. Oc1c2cccccc2nc1c1ccc1
+364. c1cccc(-c2ccc2ccnc1)=O
+365. Nc1c2cccc(-ccc2ccn1)C
+366. O=c1c2ccccccc2n1C
+367. Oc1c2cccc(F)cc1cc2
+368. Nc1c2ccccc(F)c1cccc2
+369. O=c1c2cccc(-ccccc2)o1
+370. Oc1ccc2ccc(-cccc2)n1
+371. Cc1ccc2ccc2nc1=O
+372. Oc1c2cccccc2c2cc1ccc2
+373. O=Cc1cc2ccc2ccc(N)c1
+374. O=c1c2ccccccc2cc1
+375. O=c1c2cccccc(-cc2)n1
+376. Oc1cccc2ccc(-c2ccccn1)C
+377. O=Cc1ccc2ccc2ccn1
+378. COc1cc2cccc2cc2cc2ccc1
+379. O=c1c2ccccc(-ccc2ncc1)N
+380. O=c1c2ccccc(-cccc2)o1
+381. Oc1cccc2ccc1cc2
+382. Oc1ccc2ccccc1c2c2ccc2
+epoch 3 --- train loss: 1985.955441
+validity: 5.12%, novelty: 99.48%, unique: 25.00%
+
+
+
+1. Oc1ccc2ccc2Cc3cc1cc3
+2. O=c1c2ccccc2-cc1
+3. Nc1c2ccccc2-3cc3c3c1cc3
+4. O=c1c2ccccc2n1C
+5. Cc1c2ccc2c=NOcc1
+6. Cc1c2cccc2nc3cc3cc1
+7. Nc1c2cccc-2nc1
+8. Oc1cccc(-c2ccc2)n1
+9. Oc1ccc2cc2nc1
+10. Nc1c2ccc2nc1=O
+11. Nc1nc2cc-2c1C
+12. Oc1cc2cccc1=Ncc1cc1cc2
+13. Nc1c2ccccc(-cc2)n1
+14. Oc1c2ccccc2-c1
+15. Cc1c2ccc-2nc1=N
+16. Oc1ccc2cccc1cc1cc1cc2
+17. Nc1c2cccc-2cn1
+18. Oc1cc2nccc-2c1
+19. Cc1c2ccccc2=NOcc3c1c3
+20. Cc1c2ccc-2nc1=O
+21. Nc1c2ccccc(-cc2)n1=O
+22. O=c1c2ccccccn1c1cc1cc2
+23. O=Cc1cc2ccccc2cc1
+24. Oc1ccc2ccc2=Ncc1
+25. O=Cc1cccc(N)c1Cl
+26. Nc1nc2cccc-2c1
+27. O=c1c2ccccc-2cc1
+28. Nc1c2ccccc1c1cc1cc1c2ccc1
+29. Nc1c2ccccc2cc-3cc3c1
+30. Nc1nc2ccc2Ccc1
+31. Oc1ccc2ccc(-cc2)n1
+32. Nc1nc2cc-2cc1=O
+33. O=c1c2ccccc1n1N2Ccc1
+34. O=Cc1cc2cc2c(N)s1
+35. Cc1cccc2c1nc1=Ncc1cc1c2cc1
+36. Nc1c2cccn2C=c1
+37. O=Cc1c2ccc2cc(N)n1
+38. Nc1c2cccc-2coc1c1ccc1
+39. Cc1c2ccc2cc(F)c1c1ccc1
+40. Oc1c2cccccc2-3ccc3cc1
+41. Cn1c2cccc2cc1=N
+42. Cc1c2ccc2nc1=N
+43. Nc1c2ccccn2Ccc1
+44. Cc1cccnc1N
+45. O=Cc1cc2cccc2c1
+46. Nc1c2ccccn2C3c1cc13cc1
+47. Cc1c2ccc2c(=O)ccn1
+48. O=C(Nc1)ccccc1
+49. O=c1c2ccccc(-cc2)s1
+50. Nc1c2ccccc2-ccc1
+51. c1cc2cc-2ncc1
+52. O=C(N)c1ccccn1
+53. O=c1c2cccccs1Nc1cc1cc2
+54. Cn1c2cccc2=N1
+55. Nc1c2ccc-2cc1=c1cc1
+56. O=c1c2ccccc1nc1Ncc2cc1
+57. O=c1c2ccccc1sc1Nc1cc2
+58. Nc1c2ccc(=O)cc1-2
+59. Oc1cc2cccc2c3Ncc3c3c1cc3
+60. Nc1c2cccccn2c1
+61. Nc1c2cccc1n2C=O
+62. O=c1c2cccc(N)c1-2
+63. Nc1c2ccccc2oc1
+64. Nc1c2ccccc2Cccc1
+65. Oc1ccc2ccc2n1
+66. Nc1c2ccccc(=O)c1-c2
+67. O=c1c2cccc(N)-2cc1
+68. Oc1c2ccccc2=Ncc1
+69. Nc1c2cccccn2ccc1
+70. O=Cc1cc2cccc2ccc1
+71. O=Cc1c2cccc2nc1N
+72. Nc1c2ccccnc1c1c2cc1
+73. Nc1c2cccccc2-3ccc1cc3
+74. O=Cc1cc2ccccc2Ncc1
+75. Cc1c2ccccnc1Nc1cc2ccc1
+76. O=c1c2cccccc1cc1cc1ccc2
+77. O=Cc1cc2ccc2nc1N
+78. Nc1c2cccc2nc1C
+79. O=c1c2ccccc1Ncc1cc2cc1
+80. Oc1ccc2cc(NCccc2)n1
+81. O=c1c2cccccn1c1c2cc1
+82. O=Cc1cc2cccccc2c3cc3cc1
+83. Cc1c2cccc2nc1N
+84. Cc1c2cccc2=NOccc1
+85. Nc1c2ccccc-2n1
+86. O=c1c2ccccc(N)c2c1
+87. O=Cc1c2cccc1cc1Nc1cc1c2cc1
+88. O=c1c2cccccc2-3cc1cc3
+89. O=Cc1c2cccc2nc1
+90. Nc1c2ccccn21
+91. Oc1c2ccccc2-3c1c3
+92. Nc1c2ccc-2nc1=O
+93. Nc1c2cccn2Cc1
+94. Nc1c2ccccn2C3cc1cc3
+95. Oc1c2ccccc1=Ncc1cc1cc2
+96. Nc1c2ccc-2cnc1
+97. NCc1ccccnc1=O
+98. Cc1cccc1=NO
+99. Nc1c2ccccc1ncc1cc2cc1
+100. O=c1c2ccccnc1Nc1c2ccc1
+101. O=Cc1c2ccccccn1Nc1c2cc1
+102. Oc1c2ccccc2n1
+103. Oc1ccc2cccc1cc1ccc2ccc1
+104. O=Cc1c2ccc2ncc1N1cc1
+105. Cc1c2cccc2=NOc1
+106. Oc1ccc2cc1cc2n1cc1
+107. Nc1c2cccc(-ccc2)n1
+108. COc1c2ccc2c(F)=Nc1
+109. O=c1c2cccc(-cc2)n1
+110. Nc1c2cccc(-ccc2)n1=O
+111. COc1c2ccc2nc1=N
+112. Oc1cc2cccnc1Nc1c2cc1
+113. Nc1c2cccn2-c1
+114. O=c1c2cccc(N)c1-cc2
+115. Oc1cc2cccc2=Ncc1
+116. Oc1c2cccccc1cc1cc2cc1
+117. Oc1cccc(N)c1
+118. Cc1c2ccc2ncc1N
+119. O=c1c2cccccn1Nc1c2cc1
+120. O=c1c2ccccc2Ccc1
+121. O=c1c2ccccc1Ncc1cc1cc2
+122. Nc1c2cccccnc2ccc1
+123. O=Cc1c2ccc2cc(N)c1
+124. Oc1ccc2ccc2-3cc1cc3
+125. Oc1ccc2ccc1=Ncc1cc2cc1
+126. Nc1c2cccc(F)-2c1
+127. Cc1c2ccc2nc1=Nc1ccc1
+128. COc1c2cccc2nc1
+129. Nc1c2cccc(-ccn2)Cc1
+130. O=Cc1c2ccccc2Nc1
+131. Nc1nc2cc-2c1
+132. O=Cc1c2cccc2c(N)c1
+133. O=Cc1cc2ccc2cc(N)cc1
+134. Nc1c2ccccc2-3cc1cc3
+135. O=C(c1c2ccccccc2)Nc1
+136. O=c1c2ccccc(-c2)n1
+137. COc1ccccc1
+138. O=Cc1c2ccc2nc(N)c1
+139. O=Cc1cc2cc2nc(N)c1
+140. Oc1ccc2cc(-cc2)=Nc1
+141. O=Cc1c2ccccccc1cc1c2cc1
+142. O=c1c2ccccn1-c2
+143. O=Cc1c2ccc2ncc1N
+144. O=Cc1cc2ccc2nc1
+145. Cc1cc2ccc2=NOccc1
+146. O=Cc1ccc2cccc2Ncc1
+147. Nc1c2cccc(=O)c1-2
+148. O=Cc1c2ccccc2ccc1
+149. Cc1c2ccc2cc(=O)Ncc1
+150. Nc1c2ccccc2n1=O
+151. Oc1ccc2cccc1cc1ccc1ccc2
+152. Oc1c2ccccc2-3cc1cc3
+153. Cc1c2cccnc2=Ncc1
+154. Oc1cc2cccc2-3cc1cc3
+155. Nc1c2ccccc1nc1cc1cc1c2cc1
+156. Oc1ccc2ccc2ccc1
+157. Nc1c2ccccn2cc1
+158. O=c1c2ccc(N)cc1-2
+159. COc1c2ccc2c(N)cn1
+160. O=c1c2cccccn1NCc1c2cc1
+161. O=c1c2ccccc2n1N
+162. Cc1c2cccn2Sc1
+163. Cc1c2ccc2coc1=N
+164. O=c1c2ccccc2cc1
+165. O=c1c2cccccc1Ncc1c2cc1
+166. Nc1c2ccc2ncc1C=O
+167. Oc1ccc2ccc2-c1
+epoch 4 --- train loss: 1757.173340
+validity: 0.77%, novelty: 100.00%, unique: 72.29%
+
+
+
+1. O=C1cccccc1N
+2. Cc1c2cccc2=Ncnc1
+3. O=c1c2ccccc-2nc1
+4. O=Cc1c2cccc-2cn1
+5. O=c1c2cccc-2n1
+6. Nc1c2cccc-2nc1
+7. Nc1c2cccc-2con1
+8. O=c1c2cccccc-2c1c1ccc1
+9. O=c1c2cccccc-2n1
+10. Nc1c2ccccc-2nc1=C
+11. O=c1c2ccccccc-cc1cc2
+12. NC1=c2ccccc-21Cl
+13. Nc1nc2cc-2cc(C=O)c1
+14. Nc1nc2ccc-2c1=CCl
+15. Nc1c2cccc-2ccc1=O
+16. Nc1nc2ccc-2cc1CF
+17. Nc1c2cccc-2cn1
+18. Nc1c2ccc-2coc1=O
+19. Cc1c2cc-2c(=N)cc1F
+20. O=c1c2ccccc-2n1N
+21. Nc1c2ccc-2csc1=S
+22. O=Cc1c2ccccc-2Nc1
+23. Nc1c2ccccc-2ncc1
+24. O=c1c2ccccc-21
+25. Nc1c2ccc-2co1
+26. Cn1c2cccc2=Ncc1Cl
+27. Oc1c2cccccnc2=Ncc1
+28. Sc1c2cccc-2cs1=3ccc3
+29. S=c1c2ccc-2nc1
+30. O=Cc1ccccc1N
+31. Oc1c2ccccc-2c1
+32. Oc1c2ccccc3=Nc3c3c1c2cc3
+33. Nc1nc2cc-2co1
+34. Nc1nc2cccc-2c1
+35. O=c1c2ccccc-2cc1
+36. O=Cc1c2cccccc1cc1c2c1
+37. Nc1nc2ccc-2cc1
+38. Cc1c2cccc2=Nccn1
+39. O=Sc1ccccc1
+40. S=Nc1c2ccccc-2c1
+41. O=c1c2ccccc-c2cs1
+42. O=Sc1c2ccc-2n1
+43. Nc1c2ccccc2nc1=O
+44. Nc1nc2ccc-2cc1C
+45. c1cc2cc-2cs1
+46. O=c1c2ccccccc-2Nc13cc3
+47. Cn1c2cccc-2cc1=N
+48. O=Cc1c2cccc-2cc1N
+49. Nc1nc2cccc-2cc1=c1cc1
+50. Nc1nc2ccc-2cco1
+51. Nc1c2cccc-2cn1=O
+52. Cc1c2cccc2nc=Ncc1
+53. Nc1c2ccc-2ccn1=O
+54. O=Cc1c2cccccc2Nc3c1cc3
+55. S=c1c2cccc-2co1
+56. O=C1Ncccccn1
+57. Nc1c2cccc-2cnc1=O
+58. Nc1c2ccccc-2cnc1
+59. Oc1c2cccc-2nc1
+60. O=Cc1ccccc1
+61. Cc1c2cccc2=Ncccc-c1
+62. Nc1c2ccccc-2nc1=O
+63. Oc1ccccc1
+64. Nc1c2cccc-2nco1
+65. Cc1c2cccc-2cnc1=N
+66. O=C1c2cccccc-2cs1
+67. O=c1c2ccccc-c2nc1-3cc3
+68. O=c1c2cccccc-c2cc1
+69. Nc1c2cccc-2cnc1=c1cc1
+70. O=c1c2cccccc-2c1
+71. O=c1c2ccccc-2nc1N
+72. Nc1c2ccccc-2nc=c1
+73. Nc1c2ccccc-n2=Cc1
+74. Cc1c2ccccc2nc=Nc1
+75. Nc1c2cccccc-n1cc1c2ccc1
+76. Nc1c2ccccc-c1nc1cc2cc1
+77. O=c1c2ccccc(N)c2c1
+78. O=c1c2ccccc-2c1-3cc3
+79. Nc1c2cccc-ccc1cc1c2cc1
+80. Nc1c2ccc-2con1C
+81. Cc1c2cc-2c=Nn1
+82. Nc1c2ccc-2cs1
+83. Oc1c2cccc-2s1
+84. Oc1c2cccccc=Nc1ccc2
+85. Oc1c2cccc-2ncs1
+86. Nc1nc2cccc2Cc1
+87. N=c1c2ccccc-2nc1
+88. Nc1c2cccc-2n1C=O
+89. O=Cc1c2ccccc-23c1c3
+90. O=c1c2ccccc-2s1
+91. NC=Cc1cccnc1O
+92. Cc1c2cccc2c-3=Nccc1c3
+93. O=Cc1ccccn1
+94. O=Cc1ccc[nH]1
+95. Nc1nc2cc-2coc1=O
+96. Nc1c2ccccc-2n1=O
+97. Cc1c2ccccc2nc1=NCl
+98. N#Cc1cc2ccc-2cc1
+99. Nc1c2ccccccn1c1c2cc1
+100. Oc1c2ccccc-2n1
+101. Nc1nc2ccc-2c1=O
+102. Oc1ccc2cccc1cc2
+103. O=c1c2ccccc-2cs1N
+104. O=c1c2cccc-2cs1
+105. Nc1c2ccccoc1=Sc1cc2ccc1
+106. Nc1nc2cc-2ccs1C
+107. Nc1c2ccccc-2c1
+108. Cc1c2ccccc2=Ncc1
+109. O=Cc1cccnc1N
+110. Oc1c2ccccc2=Ncn1
+111. Nc1c2ccccc2-3ccc1c3
+112. Nc1c2ccccc2-ccn1
+113. Nc1c2cccc-2cc=cc1
+114. Nc1c2ccccc2c3c1c3
+115. O=c1c2ccccc-2cn1
+116. O=C1c2ccccc-2cn1
+117. O=c1c2ccccc-2cc1N
+118. c1c2ccc2-ccc1
+119. O=C1c2ccccc-2cc1
+120. Cc1c2cccoc2=Nccc1
+epoch 5 --- train loss: 1620.557576
+validity: 0.58%, novelty: 100.00%, unique: 69.36%
+
+
+
+1. Nc1c2cccc2-ccs1=c3cc3
+2. Cc1c2cccc2=Ncnc1
+3. Cc1c2cccc2=Ncnc1F
+4. O=c1c2cccc-2ncs1N
+5. O=Cc1cccc2cc1cnc1Nc2c1
+6. Nc1c2ccc-2ccn1
+7. O=Cc1c2ccccc2ncc1N
+8. O=c1c2ccccc-2nc1
+9. O=c1c2cccc-2n1
+10. Oc1c2ccccc-2nc1=N
+11. Nc1c2cccc-cnc1c2
+12. Nc1c2ccccc-c2nc1
+13. O=c1c2ccccc-2n1N
+14. N=c1c2cc-2cc(F)nc1=S
+15. O=Cc1cccnc1N=S
+16. O=Cc1c2ccccc2nc1=N
+17. O=c1c2ccccc2nc1N
+18. Nc1c2ccccc2=ccn1F
+19. O=c1c2ccccc-2Ncc1
+20. O=c1c2ccccc-2ncs1
+21. Cc1c2ccccc2c3=Nccc3-3cc3c1
+22. O=c1c2ccccc-2cc1
+23. N=Cc1c2cccc2ncoc1=O
+24. Cc1c2cc-c2c=Scc1
+25. O=c1c2ccccc-2c1=N
+26. Oc1cc2ccccc2nc1
+27. Nc1c2ccccc2-ccnc=Sc1
+28. O=c1c2cccc-2ccn1
+29. O=c1c2cccc-2nc1=N
+30. O=Cc1c2cccccc-2nc1Cl
+31. O=c1c2cccc-2c1N
+32. O=Cc1ccc2cc1cc-2N
+33. Cc1c2ccc2ncoc1S
+34. O=c1c2ccccc-2c3nc1c3
+35. N=c1c2ccc-c2cnc1Br
+36. O=c1c2ccccc-2c(F)c1
+37. O=c1c2ccccc2Nccs1
+38. Nc1c2ccc-2ccn1=O
+39. O=Cc1c2ccccc2cn1N
+40. O=Sc1ccccc1s1Nccc1
+41. Nc1c2ccccc-c2=ccc1
+42. Oc1c2cccc(F)=NC2c1
+43. Nc1c2ccccc-2cnc1
+44. Oc1c2ccccc2=Ncccc1
+45. O=c1c2cccccc1Nccc2
+46. NC1=c2cccc2nc1F
+47. Nc1c2cccc2ccoc1=S
+48. Oc1c2cccc-2nc1
+49. O=C1c2ccccc-2nc1N
+50. O=Sc1c2cccccc-2cc1
+51. O=c1c2cccccc1-2N
+52. O=c1c2ccccc2-cn1
+53. Nc1c2ccccc-c2cn1
+54. O=c1c2ccccc-2ccs1
+55. O=Cc1cccc2ccc2nc1
+56. O=Cc1c2cccc2nc1N
+57. O=c1c2ccc-2nc1N
+58. S=c1c2ccc-2ncc1=N
+59. O=c1c2ccccc-2nc1N
+60. O=c1c2ccccc-2cs1c1ccc1
+61. Nc1nc2ccc2ccocc1
+62. COc1c2cccc1ccc2=N
+63. O=c1c2cccc-2cs1=N
+64. Nc1c2cccc2-ccccs1
+65. Nc1nc2ccc2-cccc1
+66. S=c1c2cccc-2cs1
+67. O=c1c2cccc-Ncc1cc-c2
+68. O=c1c2cccc-2cnc1N
+69. Oc1c2cccc3ccc1=Ncc23
+70. Cc1c2cc-S2c(F)=N1
+71. N=c1c2cccc-2cs1=O
+72. O=c1c2cccccccc1Nccc2
+73. O=Cc1ccc2cccc2cnc1=N
+74. O=S1c2cccc-2no1
+75. Nc1nc2ccc-c2ccc1
+76. Cc1c2cccc2nc=Ncco1
+77. O=Cc1ccccc1c(-ccc1)nc1
+78. O=c1c2cccc-2cs1
+79. O=c1cccccc1n1-cccc1
+80. Nc1nc2ccc2-c3cccc=c1c3
+81. O=c1c2ccccc2-Nccs1
+82. O=c1c2ccccc-2nccc1
+83. O=c1c2cccc-2nc(N)c1
+84. O=C1Nc2cccccc2c1
+85. O=Cc1cc2ccccc2=Ncnc1
+86. O=C1Nc2cccccccn1-cc1cc1-cc2
+87. Cc1c2cc-2c(N)cn=S1
+88. O=Sc1c2cccc-2ncs1
+89. O=Cc1c2cccccc2nc1N
+90. Cn1c2cccc2=Scccc1
+91. Nc1c2c-cccc-2ccn1
+92. Cc1c2cccc=S-2nco1
+epoch 6 --- train loss: 1527.845846
+validity: 0.36%, novelty: 100.00%, unique: 84.40%
+
+
+
+1. O=Cc1cc2nc-c2=Nccc1
+2. O=c1c2cccc-2nc1=NF
+epoch 7 --- train loss: 1450.357622
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. O=c1c2ccc-cnc1c2
+2. N=c1c2ccc-cnc2=cc1F
+3. O=c1c2cccccc2=Nccnc1
+4. O=Cc1cccc2nc2=Ncccc1
+5. O=c1ccc2ncc1=Ncnc2
+6. O=c1ccc2nc-c2s1
+7. O=Cc1cccc2nc2=Ncc-3cc1=3
+8. Oc1cc2ccc-c1c=cn2
+9. Nc1c2cccc2-ccn3c1c3
+10. Nc1ccccc2ncc2cc-3cc1cnc3
+11. O=c1c2ccccc-2ncs1
+12. O=c1c2cccc1=Scc-2
+13. O=c1c2cccc1=Ncc=c2F
+14. O=c1ccc2[nH]nc1-c2
+15. Oc1cccc2nc2=Nccnc1
+16. O=c1ccc2ncnc=Ncnc1cc2
+17. O=c1c2ccccnc-2nc1=N
+epoch 8 --- train loss: 1370.668315
+validity: 0.06%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. N=c1nc2nc-c2cnco1
+2. N=c1c2ccc-c2noc1=S
+3. O=c1c2cncnc1N2
+4. O=c1c2ccccc2nc-nc1F
+5. O=Sc1ccccc2nc2nc1
+6. O=c1c2cccc-c2nccc1F
+7. O=c1ccncnc2-cc2nc1
+8. O=c1c2cncnc2-ccnc1
+9. O=c1c2nccc-c2s1
+10. O=C1Nccc2cccc-c2nc1Cl
+11. S=c1[nH]c2nc1nc-c2
+12. N=c1c2cccnc-2nc1Cl
+13. O=c1ccccc2nc-2cs1
+14. O=c1c2cccn2sc1=N
+15. O=c1ccccc2ccc2-ncs1
+16. O=Sc1c2ccccc2nnc1
+17. O=c1c2cccnc-c2cs1
+18. O=c1c2ccc1n=Ncc-cn2
+19. N=c1c2c-c1ccnc2=S
+20. Nc1ccc2ccnc-2nc1
+21. Nc1c2c1cccoc2=SF
+22. N=c1c2cccn2cnoc1=O
+23. [N-]=Sc1cccc2nc-c2nc1
+24. Fc1cc1-2ccnc=Nc2
+25. O=Nc1ccc2ccc1nc-c2
+26. O=Sc1c2ncc-cc2cnc1F
+27. Nc1c2ccc=cc-n2s1F
+28. O=c1c2cccc1nc=Ncnc2
+29. Sc1c2ccccn2-cc1F
+30. N=c1c2cc-cnc2nc1F
+epoch 9 --- train loss: 1283.863277
+validity: 0.10%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Nc1c2ccc3=ccnc3-ccc1c2
+2. O=c1c2ccccc3=Nccc1cc1c2c31
+3. O=c1c2cccnnc2=Scc1F
+4. O=c1c2ncnc-ccc2cc1Br
+epoch 10 --- train loss: 1187.839797
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. N=c1c2ccc1cnc=Sc2Br
+2. O=c1cccc1c2cc-cnc2F
+3. Nc1c2cccccnc2=Scccc1F
+4. Nc1cc2cccccc1-ccc2c3=cc3Cl
+5. Nc1c2nccc-cnc2=cc1F
+6. Nc1c2cc=cnc1-ccc2F
+epoch 11 --- train loss: 1090.959165
+validity: 0.02%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Sc1cc2nc=ccc2=cnc1F
+2. N=c1cc2ncc2=Scc1F
+3. Nc1c2ccc1=ccccc1=Scccc1cc2
+4. Nc1c=cc2ncc2ccc=cc1F
+epoch 12 --- train loss: 1075.881713
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. c1cnc2nc1cnc1=Sc2=cs1F
+2. Nc1nc2cc-c1nc2F
+epoch 13 --- train loss: 1046.586448
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Sc1nc2cc-c2cc(-ccc2=cc2-c1cc1)c1
+2. [N-]=c1ncnc1c2=Scnc1sc2=Scnc1
+epoch 14 --- train loss: 1013.952059
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. [N-]n1nnc2-c1nc2c1c2-c1-c2Br
+2. S=c1nc2ccnc2cncnc2nc1ccccccccc2
+epoch 15 --- train loss: 985.517847
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. SSS=S1SSS1Sc1nc1=SSSc1nc1=SSSSSS1=SSc1=SS
+2. [N-]=S=S=S=S=SS=Sc1SSSSSSSSSS1=SSSSS=SSSS=SS
+3. [N-]=S1=SSS=S1=SSS=S1=SSc1=SSS=S1=SSS=SS1=SS
+epoch 16 --- train loss: 958.204783
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. [N-]=S=S1=S=S=S=S=S1SSSSSSSSS1Sc1Sc1SSSc1SSS
+2. S=SSSS=SS=SS=SS=SS=S=S=S=SS=S=S=S=S=S=S=S
+3. [N-]=S1=S=Sc1=S=S=SS=SS=SS=SS=S=SS=S=S=SS=SS
+4. SS=SS=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+5. Nn1Sc1=SSc1=SSSc1=SS=SS=S=S1=S=S=S=S=S1=S
+6. [N-]=S=S1=S=S=S=S=S=S=S=S=S1=S=S=S=S=S=S=S=S
+7. Sc1=SSSSc1=SSS=SSSSSSSSc1nc1=SSSSSSSSSSSS
+8. Sc1SSSS1=SSSSSS1=S=SSS=SSS=SS1=S=S=SSS=SS
+9. [N-]=Sc1=Sc=c=c=cc=Sc=SSSS=SS=SS=Sc1=SS=SS=S
+10. [N-]=SS=SS=SS=SS=SS1=SSSS1=Sc1=Sc1=Sc1=Sc1=S
+epoch 17 --- train loss: 932.954529
+validity: 0.03%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. S=SSSS=SS1SSSSSSSSSc1=Sc1=Sc1=Sc1=SSS1=SS
+2. [N-]1SS1SS1SS1SSSSS1-SSSSSS1ISS1ISS1I1ISSSS1
+3. [N-]1SS=SSS=SSS=SSS=SS=SS=SS=SS=SS1=SSSSSS=S
+4. N=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+5. [N-]=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+6. [N-]=S=S1=S=S=S=S=S=nn1SS1SSSS1=SS1=SSS=S=S1
+7. [N-]=SS=S=SS=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+8. Nn1SSSSn1SSSSS1=SSSSS1=SSSS1=SSSSS1=SSSSS
+epoch 18 --- train loss: 910.754570
+validity: 0.03%, novelty: 100.00%, unique: 88.89%
+
+
+
+1. S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+2. [N-]=SSS=SSS=S=S=S=S=SSSS=SSS=SS=SS=SS=SS=SS
+3. [N-]=SSS=SSS1SSSSSSSS1=S=S=S=S=S=S1=S=Sc1=SS
+4. [N-]=S=S=S=SSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSSS
+5. Nc1nc1=S=Sc1=S=S=S=S=S=S=S=S=S1=Sc1=Sc1=S
+6. [N-]S=SSSS=S1=Sc1=S=SS=S1=S=S=S=S=S1=SSSSS=S
+7. SSc1Sccc1SSSSc1SSSc1SSSSSSS=SSc1=SSc1=SSS
+8. S=SS=S=S=S=S=SS=SSS=SSS=SS=SS=S=S=SS=S=SS
+9. SSS1SSS=SSSSSSSS1SS1=SSS1SSSS1=SSSSS1SSSS
+10. [N-]=S=S=S=S=SSS=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+11. [N-]1SSc1=SSc1SSSSc1SSSSSc1-nnc1-SSSSSSSSSSS
+12. [N-]1nnnc1[C-][C-]c1=Sc1=Sc1=Scc1F
+13. N=S=S1=S=SS1=SSS1SSSSS1SSSSSS1=SSSS1=SSSS
+14. [N-]=S=S=S=S=S=S=SS=SSSSSS=SSSS=S=SS=SS=SS=S
+15. N=c1nc1Sc1sc1SSSSSSSISI1ISSI1ISSS1ISSS1IS
+16. S=S=S=Sc1=SSSS=S=SS=SS=SS=SS=S1=S1=Sc1=SS
+17. [N-]S=S1SnnSS1=SSSS=SS=SSSS=S1SSSSSSSS1=SSSS
+18. NSSSSc1=Sc1=SSSS=SS=SS=S=S=S=S=S=SS=SS=SS
+19. S=SS=SS=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+20. [N-]SSSSSSSS=SSSSSSSSSSSSSSSSS=SSSSSSSSSSSSS
+21. [N-]=S=SS=SS=S=S=SS=S=SSS=SSS=SSSSSSS=SSS=SS
+22. Sn1SS=S1=Sc1c-c-SSSSSSSS=SSSSc1=SSSSS1nc1
+23. [N-]=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+24. Sc1SSc1SSSc1SSSSc1SSSSSSSSc1=SSSSSSSc1=SS
+25. [N-]n1SSSScnc1=Sc1=IIIIIIIII1IIIIIIIIIIIIIII
+26. NS=SSS=S=SSSS=SSSSS=SSSSS=SS=SS=SSS=SSS=S
+epoch 19 --- train loss: 891.753051
+validity: 0.09%, novelty: 100.00%, unique: 96.30%
+
+
+
+1. [N-]c1=S=Scnc1=S=S=S=S=S=S=S=S=S=S=Sc1=Sc1=S
+2. S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+3. Nc1ncnc1=Sc1=Sccccn=Sc1=Sc1=Sc1=Sc1=Sc1=S
+4. Nc1ncncncncccccnccnccncncnnnn1Sc1nnnnnnc1
+5. [N-]=SS=SS1=S=SS=SSSS=SSSS=SS=SSS=S=S1=SSSSS
+6. [N-]=S=S=SS=S=S=S=SS=SS=SSS=SS=S=SS=S=S=SS=S
+7. N=S=S=S=S=SS=SSSSSSS=SSSSS=SSc1nnncnc1=SS
+8. SSSSSSSSSSS=SSSSSSSS=SS=SS=SSS=SSSSSSS=SS
+9. SSSSSS=SSSSSSSS=SSSSSSSSSSSSSS=SSSSSSSSSS
+10. [N-]1S=SS=S=S=S=SSSc1S=S=SS=S=S=SS=SS=SSS=SS
+11. [N-]SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+12. N=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+13. SS=SS=S=SS=SS=SSSS=SSSSSSSSS=SS=SS=SSS=SS
+14. [N-]SSSSSSSSSS=SSSS=S=S=S=SS=SS=S=SS=SS=SS=S
+15. [N-]=SS=SSS=S=S=S=SSSSSSSSSSSS=SSS=SSS=SSSSS
+16. S=SS=S=SSSS=SSS=SSS=SSS=SSS=SSS=SSS=SS=SS
+17. Sc1nn=S=S=Sc1=S=Sc1=Sc1=Sc1=Sc1=Sc1=Sc1=S
+18. [N-]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]
+19. NSSc1SSSSSSSSSSSSSSSSSSSSS1=SSSSSSSSSSSSS
+20. [N-]c1ncnc1=S=S=S=S=S=S=Sc1=cnc1=Sc1=Scnc1=S
+21. [N-]S=SSSS=SSS=SSSSSSSS=SSSSSSSSSSSSS=SSSSSS
+22. SS=SS=SSS=SSSSSSSS=SSSSSSSS=SSSSS=SSSSSSS
+23. [N-]S=SS=S=SS=SSS=SS=S=S=S=S=S=S=S=S=S=S=S=S
+24. [N-]=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+25. SS=SSS=SSSSSS=SSSSSS=SSSSS=SSSSSSS=SSSSSS
+26. N=SSS=SS=SS=SS=SSSS=SSS=SSS=SS=S=SS=SS=SS
+27. NSSSSS=SSSS=SSS=SSSSSSS=SSSSSSSSSSSSS=SSS
+28. SSS=SSSSS=Sc1=S=S=S=S=S=S=S=S=S=Sc1=S=S=S
+29. [N-]=S=S=SS=SSS=SS=SS=SS=S=S=S=S=S=S=S=S=S=S
+epoch 20 --- train loss: 875.323854
+validity: 0.11%, novelty: 100.00%, unique: 85.29%
+
+
+
+1. Cl[S+][N-][S+][N-][S+][N-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+2. [N-]=SS=SSS=SSSSS=SSSSSSSSSSSSS=SSSSSSS=SSSS
+3. S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+4. SSSSSSSSS=SSSSSSSSSSSS=SSSSSSSS=SSSSSSSSS
+5. SSSSSS=SSSSSS=SSSSSS=SSSSSSSS=SSSSSSS=SSS
+6. SSSSSSSSS=SSSSSSSSSSSS=SSSSSSSSSSSSSSSSSS
+7. SSSSSSSSSSSSSSS=SSSSSSSSSSSSS=SSSSSSSSSSS
+8. SSSSSSSSSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSSSS
+9. [N-]SSSSS=SSSSSS=SSSSSSSSS=SSSSSSSSSSSSSSSSS
+10. [N-]SS=SSSSSSS=SSS=S=SSSSSSS=SSSSS=SSSS=SSSS
+11. c1ccc1Ic1IIIIIIIII1IIIIIIIII1=IcIIII1IIII
+12. SSSS=S=S=SSSSSSSSSSSSSS=SSSSSSSSSSSSSSSSS
+13. [O-]SS=SSS=SSSSSSSS=SSSSS=S=S=S=S=S=S=S=SSSS
+14. [N-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+15. NSSS=SSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+16. ClSSSSSSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSS
+17. ClSSSSSSSSSS=SSSSSSSSSSSSSSS=SSSSSSSSSSSSS
+18. SSS=SSSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSSSSSS
+19. SS=S=S=SSSS=SSSSS=SSSS=SS=SS=SS=SS=SSS=SS
+20. [N-]=SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+21. SSSSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSSSS
+22. c1[N-]c=Sc=SSSSSSSSSc1[N+][N+][N+][N+][N+][N+][N+][N+][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+23. Sc1nnnSSSSSn1SSSSSSSSSSSSSSSSSSSSSSSSSSSS
+24. NSS=SSSSS=SSS=SSSSS=SS=S=SSSS=SSSSS=SSSSS
+25. NSc1-Sc1-Sc1=SccScS-[N-]cS-SScS1SSSSSSSSSSSS
+26. [N-]SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+27. SSSSS=SS=S=S=S=S=S=SSS=SSSSSSSSSSS=SSSS=S
+28. N=S=S=S=SSSSSSSSSSS=SSSSSSSSSSSS=SS=SSS=S
+29. SSSSSSSSS=SSSSSS=SSSSSSSSSSSSSSS=SSSSSSSS
+30. NSSS=SSSSSSSSSSSSSSS=SSSSSSSSSSSSSSSSSSSS
+31. SSSS=SSSSSS1S=SSSSc1-SSSSSSSSSSSSSSSSS=SS
+32. SSSSSSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSSSSSSS
+33. [N-]SSS=SSSSSS=SSSSS=SSSSSS=SSSSSSS=SSSSSSSS
+34. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+35. S=SS=S=S=S=S=S=S=S=S=S=SSSS=SSSS=SSS=SS=S
+36. [N-]=[N+]=[N+]=[N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+]
+37. SSSSS=SSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSS=SS
+38. SSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSS=SSSS
+39. NSSSS=SS=S=SS=SSSS=SSSSSSSSSSSSSSSSSSSS=S
+40. [N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+41. NSSSSSSSSSSS=SSSSSS=SSSSSSSS=SSSSSS=SSSSS
+42. SSSSS=SSSSSS=SSSSS=SSSS=SSSSSSSSSS=SSSS=S
+43. S=SS=S=S=S=SSSS=SS=S=S=S=S=S=S=S=S=S=SS=S
+44. [N-]SSSSSSSS=SSSSSSSSSSSSSSSSSSSSS=SSSSSSSSS
+45. S=S=Sc1[n+]2[n+]c2SSSSSSSSSSSSSSSSSSSSSc1=SSSSS
+46. S=SSSSSS=SSSSSS=SSSSSSSSSSSSS=SSSSSSSSSSS
+47. SSSc1ccnc1=SSSSSSSS=SSSSS=SSSSSSSSSS=SSSS
+48. NSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+49. SS=SSSSSS=SSSS=SSS=SSSSS=SSSSSSSSSSS=SSSS
+50. SSS=SS=SS=S=S=SSS=SSSS=SSSSSS=SSSS=SSS=SS
+51. [N-][n+]1ccc1[S+]N[S+][N-][Se][Se][Se][Se][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-][S+][N-]
+52. [N-]=S1S=S1c1ccc1c1Sc1Sc1=Sc1=Sc1=SISISIS1=S
+53. [N-]=SSSS=SS=S1Sc1=SSS=SSS=SSS=SSSS=SSS=SSSS
+54. N=SSSSSSS=SSSSSSSSSS=SSSSSSSSSSSSSSSSSSSS
+55. [N-]=SSSSSSSSSS=SSSSSSSSSSS=SSSSSSSSS=SSSSSS
+56. S=Sc1=S=S1=S1SSS=SS=SS=S=S1=S=S=S=S=S=S=S
+57. [N-]=SSS=SS=SS=SSSSS=SSSSSc1=SSSc1=SSSSS=SSS
+58. SS=SSSSS=SSS=SS=SSSSSSSS=SSS=SSS=SSSSSS=S
+59. N=S=SS=SSS=SS=SSSSSSSS=SSSSSSSSSS=SSS=SSS
+60. SSS=SSSS=SSSSSSSSSSSSSSS=SSSSSSSSSSSSSSSS
+61. S=S=SSSSS=SSSS=SSSSSSSS=SSSSSSS=SSSSS=SSS
+62. N[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+63. Sc1=[N+]=[N+]=[N+]ccc1=Sc1=S=S=S=S=S=S=S=S=S=Sc1=S
+64. NSS=SSSSSSSS=SSSSSSSS=SSSSSSSS=SSSSS=SSSS
+65. [N-]SSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSSSSSS=SSS
+66. SSSSSSSSSSSSSSSSSSS=S=S=S=SSSSS=SSSSSSSSS
+67. NSc1=Sc1=Sc1=Sc1=Sc1=SS=SSc1=SS1=SSS=S1=S
+68. SSSSSSS=SS=SS=SSSSSSSSSSS=SSSSSSSSSSSS=SS
+69. SSSSSc1=Sc1=S=S=Sc1=Sc1=Sc1=Sc1=Sc1=Sc1=S
+70. S=S1S=S1=Sc1S=SSS=SS=SSS=SSS=S1=SS=SSS=SS
+71. [N-]=SSSSSS=SSSS=SSS1=SSSSSSSSSSSSSS=S1=SSSS
+72. NSc1=S=S=S=nn1SSSSSSSc1=SSSSSSSSSSc1=SSSS
+73. N=SSSSS=SSSS=SSSS=SSSS=SSSS=SSSS=SSS=SSSS
+74. ClS1=Sc1=Sc1=Sc1=Sc1=S=Sc1=S=S=S=S=S=S=S=S
+75. SSSSSS=SSS=SS=SSSSSS=SSSSSSS=SSSS=SSS=SSS
+76. S=SSSSSSSSSSSSSSSSSSSSSSSSSSSSS=SSSSSSSSS
+epoch 21 --- train loss: 861.594109
+validity: 0.30%, novelty: 100.00%, unique: 85.39%
+
+
+
+1. Clc1cnc[n+]c[n+]cccccc=ccccccccccccccccccccccc1Cl
+2. SS=S=S=S=SSSSSSSSS=SSSSSSSSSS=SSSSSSSS=SS
+3. [N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+4. SSSS=SSSSSSS=SSSSSS=S=S=S=SS=SS=SS=SSSS=S
+5. [N-]=[N+][N+]=[N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+]=[N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+]
+6. SSSS=SSS=SSS=SSS=SSSSSSSSSSSSSSSSSSSSSSSS
+7. [N-][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+][N+]=[N+]I[N+]I[N+]=[N+]IIIIIIIIIIIIIIIII[N+]I[N+]I
+8. Nc1cccccccccccc1=S=Sc1=S=S=Sc1=SSc1=Sc1=S
+9. [N-]=S=SS=S=SS=SS=SSS=SSS=S=S=SS=SS=SSS=SS=S
+10. SS=SS=SS=SSS=SSSSSSSSSSSSSS=SSSSSSSSS=SSS
+11. SSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+12. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+13. SSSSS=S=SSSS=SSSSSSSSSSSSSSS=SSSS=SSSSSSS
+14. [N-]Sc1=SSS1SSSSc1ccccccSSSSSSSSSSSSSSSSSc1S
+epoch 22 --- train loss: 849.919213
+validity: 0.05%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Sc1Scc=S=SSS=S=SSc1Sc1=Sc1=SSSSSSSSSSSSSS
+2. S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S=S
+3. NS1=S=S=S=S=S=S=S=S=S=S=S1=SSSS1=SSSS1=SS
+4. S=S=S=S1=SSSSS=SSSSSSSS=SSS=SS=SSS=SS1=SS
+5. [N-]=S1=SSSS=SSc1SSSSSSSSSSSSSSSSSSSSSSSSSSS
+6. S1ncn1SSSSS1SSSSSSSSSSSSSSSSc1Sc1Sc1SSSSS
+7. SSSSSSSSSSSSSSSSSSSSSSSSSSSSS=SSSSSSSSSSS
+8. S=SSSSSS=S1SSSSSSSSSSSSSSS1SSSSSSSSSSSSSS
+9. [N-]=S=SS=SS=SSS=SSSSSSSSSSSSSSSSSSSS=SSSSSS
+10. Sc1SSSSS=S=S=S=S=SSSSSS=SS=S=S1=SSSSSSSSS
+11. ISc1S=Sc1SSS=SSSSSSSSS=SSSS1=S=S=S1=SSSSS
+12. SSS=SS1=S=S=S=S=S=S=SSSS1SSSSSSSSSSSSSSSS
+13. SSSc1=SSSSSSSSSSSSSSSSSS1=SSSSSSSSSSSSSSS
+14. [N-]=SS=S=S=S=S=S=S=S=S=S=SS=SS=SSS=SS=SSS=S
+15. SS=SS=S=S=SS=Sc1=SSSSS=Sc1=SSSSSSSSSSSSSS
+16. [N-]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]=[N+]
+17. N1Sc1Sc1=Sc1=SSSSSSSSSSSSSSSSSS1=SS1=SSSS
+18. [N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+19. Sc1=cnncncn=cccccnccncccccccncccccnccncc1
+20. NSSSc1=cc1SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+21. S=1=SS=S=S=S1=SSSSS=S=SS=SS=SSS=SS=SSS=SS
+22. NS[S+]SSSSSSSSSSSSSSSSSSSSS=S=SSSSSSSSSSSSSS
+23. SS=SSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+24. [N-]1SSSSS1=S=S=S=S=S=SSSS=SSSSSSSS=SSSSS=SS
+25. Cl[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+26. SSS=SS=SS=S=S=SSSS=SSSSSSSS=SSS=S=S=SS=SS
+27. c1nc1=SSS=S=SSS=SSSSSSSS=S1SSSS1=SSSSSSSS
+28. S1=Sc=S=S1=Sc1Sccc1SSSSS1SSSSSSS1SSSSSSSS
+29. SSS=SSSSS=SSSSS=SSSSSSSSSSSSSSSSSSSSSSSSS
+30. SS=SSSS=SSS=[N+]=SSSSSSS=[S+]SSSSSS=SSSS=SSSSSS
+31. S=SS=S1=Sc1=SSSSSSSSSSSSSSSSSSSSSS=SSSSSS
+32. [N-]=SSS=S=S=S=SS=S1SSS1SSSSSSSS=S=SS=S=SSSS
+33. [O-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][O-]
+epoch 23 --- train loss: 839.901152
+validity: 0.11%, novelty: 100.00%, unique: 97.06%
+
+
+
+1. N[N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+2. SSSSSSSSSSSSSS1SSSSSSSSSSSSSSSS1SSSSSSSSS
+3. S1SS1=SS1SSSSSSSSSS1=SSSSSSSSS=S1=SSSS1=S
+4. [C-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+5. [O-][S+]1[S+]=[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]1=[S+]c1=[S+]c1=[S+][S+][S+][S+][S+]
+6. Nc1cc2S[n+]1[n+]c[n+][n+][n+][n+][n+][n+][n+]1cc1c2Nc1SSS1SSS1SSSSS1
+7. [O-][n+]1c2c1[n+][n+][n+]1[S+]=[S+]c2=SSSSSc1=SSSSc1SSSSSSSSc1
+8. Sc1c2ccc1nc1nc1=c1=Nc2nNcnnccccccccccccc1
+9. [O-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+10. SSSc1[S+]c1[S+][S+]c1[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]c1[S+]SSSS
+11. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+12. Sc1nnc1[n+]1SSc1SSSc1SSSSSSSSSSc1SSSSSSSSSSS
+13. [N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+14. [O-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+15. [N-]=SSSSSSSS1=S=SS=SSS1=SSSSSSSSSSSSSSSSSSS
+16. [O-][S+][S+]1[S+][S+][S+]1[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+17. [O-]c1[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]1c2[S+][S+][S+][S+][S+][S+][S+]c2[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+18. c1SSSn[S+]1[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+19. [O-][S+][S+][S+]1[S+][S+][S+]c1=[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+20. NSS=SS=S=SS1Sc1=SSSSS=SSS=SSS=SSSSS=S=S=S
+21. Cl[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+22. N[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+23. [N-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][N-][S+][N-][S+][N-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+24. c1c2c[n+]c[n+]c[n+]c2[n+]c[n+]c[n+]c[n+][n+]c[n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+]1[O-]
+25. [O-][n+]1c[N-]c=c=c1c1ccccccc1[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+epoch 24 --- train loss: 827.879513
+validity: 0.16%, novelty: 100.00%, unique: 53.19%
+
+
+
+1. N[S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+2. BrSSS=S=S=S=SSSSSS=SSSSS=SSS=S=SS=S=S=S=SS
+3. [N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+4. [O-]IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+5. S=SS=S=S=SS=SSS=SSSSSSSSSS=SSSSSSSSS=SSSS
+6. [O-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-][N-]
+7. SSSSSSSS=SSSSSSSSSSSSSSSSSSSSS=SSSSSSSSSS
+8. SS1SSSSSSSSSS1SSSSSSSSSSSSSSSSSSSSSSSSSSS
+9. [O-]Sn1Sc1=SSSSSSS1SSSSSSSSSSSSSSSSSc1=SSSSS
+10. SSSSSSSSS=SSSSSSSSSSSSSSSS=SSSSSSSSSSSSSS
+11. [O-]c1cc2cnccccccccccccnccnc1SSSSSSnc1nc1nc2
+12. SSSS=SS=SSS=SSSSSS=SSSSSSSSSSSSSSSSSSSSSS
+13. [O-][n+]1[n+]c2[n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+][n+]1=c2
+14. SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+epoch 25 --- train loss: 818.642749
+validity: 0.05%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. [O-]c1cc2cc1[n+]cccc[n+]ccccccncncncnccccccccccnc2
+2. [O-]c1cn2nnn2nnc2ccccccccncncncncncnc2ncncn1
+3. SS1nSSSSSSSSSSSSc1=SSSSSSSSSSSSSSSSSSSSSS
+4. [O-][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+][S+]
+5. [O-]S1SSSScc1Sc1SSSSSSSSSSSSSSSSSSSc1SSSSSSS
+6. [O-]c1=cccccccccccccccccccccccccc1SSSSSSSSSS
+7. S=S=S=S=S=S=SSSSSS=SSSSSS=SSSSSSSSSSSSSSS
+8. c1nc2cccc[n+]c2ccccnnnnnnnnc2nnnc2c2cn1ncnc2
+9. SSSSSSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSS
+10. [O-]Sc1Sc1S1Sc1SSSS1SSSSSSSSSS1SSSS1SSSS1SSS
+11. Sc1Sc1c1c2c1ccc1ccccc2c1Sc1SSSSc1SSc1Sc1S
+12. [O-]c1=c2=c1ccccccccccnnnnnnnnn2c2cncncncnc2
+epoch 26 --- train loss: 809.690189
+validity: 0.04%, novelty: 100.00%, unique: 100.00%
+
+
+

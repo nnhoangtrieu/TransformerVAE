@@ -1,0 +1,880 @@
+model config: Namespace(d_model=512, d_latent=128, d_ff=1024, num_head=8, num_layer=6, dropout=0.5, lr=0.0003, epochs=32, batch_size=256, max_len=40, kl_start=10, kl_w_start=0.0003, kl_w_end=0.01)
+
+
+
+1. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+epoch 1 --- train loss: 2119.080862
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+
+
+
+1. O=C(Cc1)N1
+2. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+3. CCCCCCCCCCCCCCC(=O)O
+4. COc1c(F)C1
+5. O=C(Cc1)C1
+6. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)
+7. CCCCCCCCCCCCCCCCCC(=O)O
+8. O=C(Cc1)n1
+9. COc1c(C(=O)cc1)O
+10. CCCCCCCCCCCCCCCCCCCC(C)O
+11. CCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+12. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+13. CCC(C)O
+14. O=C(Cc1)oc1
+15. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+16. CCCC(C)O
+17. COc1c(O)C1
+18. CCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+19. O=C(O)c1cc1(O)O
+20. CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+21. CCCCCCCCCCCCCCCCCCCCCCCCCCCCC(O)O
+22. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+23. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+24. COc1c(C(F)=O)o1
+25. CCCCCCCCCCCCCCCCCCCCCCCCC(=O)O
+26. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(O)
+27. COc1c(F)CC1
+28. O=C(O)c1ccc1
+29. O=C(Cc1)c1
+30. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+epoch 2 --- train loss: 1442.949647
+validity: 7.20%, novelty: 66.67%, unique: 2.08%
+
+
+
+1. CC(=O)c1cn1OC(O)
+2. C(=O)c1cn1CO
+3. CC(=O)c1ccs1C
+4. C(=O)c1ccco1
+5. CC(=O)c1ccc1C
+6. O=C(O)c1ccc1CO
+7. CC(=O)c1ccon1
+8. C(=O)c1ccc1COO
+9. O=C(O)c1ccon1
+10. CC(=O)c1cn1CCO
+11. CC(=O)c1ccc1C(O)
+12. O=C(c1ccco1)C
+13. C(=O)c1cc(F)n1
+14. C(=O)c1cc(O)n1
+15. CC(=O)c1cn1C
+16. C(=O)c1ccn1
+17. CC(=O)c1cs1
+18. COc1c(F)n1C
+19. CCC(=O)c1cn1O
+20. O=C(Cc1ccco1)O
+21. CC(=O)c1cc1(O)O
+22. CC(=O)c1cn1CC
+23. COC(=O)c1ccn1
+24. CC(C)O
+25. CC(=O)c1ccc1O
+26. Cc1c(F)n1CO
+27. C(=O)c1ccs1C
+28. CC(=O)c1con1C
+29. CCC(=O)c1cs1
+30. Cc1cc(=O)n1O
+31. CC(=O)c1co1
+32. CC(=O)c1ccc1CC(O)
+33. CC(=O)c1c(O)o1
+34. Cc1cc(O)Cn1
+35. O=C(Cc1cccs1)
+36. O=C(F)c1ccc1
+37. Cc1cc(=O)o1
+38. O=C(Cc1ccc(Cl)o1)
+39. CC(=O)c1cn1CO
+40. C(=O)c1ccc1CC(O)
+41. C(=O)c1ccc1CO
+42. COc1c(F)nc1
+43. Cc1cc(F)on1
+44. C(=O)c1ccon1
+45. C(=O)c1ccc1C
+46. CCC(=O)c1co1
+47. C(=O)c1ccc1(O)
+48. Cc1cc(=O)s1
+49. C(=O)c1ccc1CC
+50. C(=O)c1cn1C
+51. O=C(Cc1ccco1)
+52. C(=O)c1cn1O
+53. O=C(Cc1)n1
+54. CCCC(=O)c1cn1O
+55. CC(=O)c1cn1CC(O)O
+56. Cc1cc(O)n1
+57. Cc1cc(F)On1
+58. CC(=O)c1cccs1
+59. O=C(Cc1ccc(O)o1)
+60. C(=O)c1ccc1C(O)
+61. CC(=O)c1cn1C(O)
+62. C(=O)c1cccn1C
+63. O=C(c1ccc(F)o1)
+64. C(=O)c1ccs1O
+65. CC(=O)c1ccco1
+66. Cc1cc(F)n1=O
+67. C(=O)c1cs1
+68. CC(C)c1ccn1=O
+69. C(=O)c1ccc(O)o1
+70. CC(=O)c1cn1OCOC
+71. CC(=O)c1ccc1OC
+72. C(=O)c1cc(C)n1
+73. CC(=O)c1ccc1(O)
+74. O=C(O)c1ccc1C
+75. CC(=O)c1cn1OCO
+76. O=C(Cc1ccco1)C
+77. CC(=O)c1ccc1
+78. O=C(Cc1)oc1
+79. C(=O)c1ccc1
+80. O=C(Cc1cccc(F)n1)
+81. CCCC(=O)c1co1
+82. C(=O)c1ccc1O
+83. O=C(Cc1ccc(F)o1)
+84. C(=O)c1cccs1
+85. CC(=O)c1con1C(O)
+86. O=C(O)c1ccc1
+87. CC(=O)c1ccn1
+88. CCC(=O)c1ccn1
+89. O=C(O)c1ccn1
+90. CC(=O)c1cn1O
+epoch 3 --- train loss: 1159.063770
+validity: 45.02%, novelty: 98.90%, unique: 0.67%
+
+
+
+1. Cc1cc(F)n1
+2. C(F)c1cnc1CO
+3. C(=O)C
+4. Cc1c(=O)on1
+5. Cc1c(F)n1CO
+6. Cc1c(F)nc1CO
+7. C(C)c1csc1=O
+8. C(=O)CO
+9. O=C(O)c1co1
+10. Cc1c(F)on1O
+11. Cc1cc(F)n1=O
+12. C(=O)c1cs1
+13. C(=O)c1cn1O
+14. Cc1c(F)on1C(O)
+15. C(C)O
+16. Cc1c(F)nco1
+17. C(=O)c1cn1Br
+18. Cc1c(F)nc1O
+19. O=Cc1c(F)n1O
+20. C(=O)CC
+21. C(C)c1csn1C(F)
+22. C(C)c1con1C(O)
+23. Cc1cc(F)on1=O
+24. C(=O)c1con1O
+25. Cc1c(F)on1C
+26. C(F)n1cco1
+27. Cc1c(F)on1CO
+28. Cc1c(Cl)on1O
+29. Cc1ccc(F)n1C=O
+30. C(C)c1csn1O
+31. C(C)c1ccs1C(F)
+32. C(C)c1cs1=O
+33. C(=O)c1no1
+34. Cc1c(F)sn1O
+35. C(C)c1ccon1=O
+36. C(=O)c1co1
+37. Cc1c(=O)n1
+38. Cc1cc(=O)o1
+39. C(C)c1ccs1O
+40. Cc1c(F)on1C=O
+41. Cc1cc(F)no1
+42. Cc1c(F)nc1C
+43. C(C)c1c(=O)n1
+44. Cc1ccc(F)n1O
+45. C(=O)c1ccn1
+46. O=Cc1cc(O)n1
+47. O=Cc1c(F)o1
+48. C(F)c1ccn1=O
+49. O=C(F)C
+50. Cc1cc(F)on1
+51. C(C)c1ccn1=O
+52. C(=O)c1ccon1
+53. Cc1c(F)nc1C=O
+54. Cc1c(F)on1C(=O)
+55. O=C(O)c1cs1
+56. C(C)c1cs1
+57. C(=O)c1on1
+58. O=Cc1c(F)s1
+59. Cc1cc(F)s1O
+60. O=C(O)c1ccn1
+61. C(C)c1con1O
+62. C(C)c1con1CO
+epoch 4 --- train loss: 1017.614819
+validity: 6.01%, novelty: 100.00%, unique: 3.44%
+
+
+
+1. C(=O)C
+2. Cc1c(=O)on1
+3. C(=O)c1cn1CO
+4. Cc1c(=O)s1O
+5. C(=O)NCO
+6. C(=O)CO
+7. C(=O)c1cn1C
+8. C(F)O
+9. C(=O)c1non1O
+10. O=Cc1c(Cl)n1O
+11. C(=O)c1cs1
+12. O=Cc1c(Cl)n1OO
+13. C(=O)c1cn1C=O
+14. COc1c(F)n1CO
+15. C(=O)c1cn1O
+16. Cc1c(F)non1=O
+17. Cc1c(F)noc1
+18. C(C)O
+19. Cc1c(F)noc1O
+20. O=Cc1c(F)n1O
+21. O=Cc1c(F)sn1O
+22. Cc1c(F)noc1C=O
+23. Cc1c(=O)sn1
+24. O=C(O)C
+25. C(=O)c1nO1
+26. C(=O)COO
+27. C(=O)C=O
+28. C(=O)c1csn1O
+29. O=Cc1c(O)n1O
+30. C(=O)c1cn1OO
+31. Cn1c(=O)s1
+32. Cn1c(F)con1O
+33. Cc1c(F)non1
+34. C(=O)c1no1
+35. CC(=O)c1no1
+36. Cc1c(=O)n1
+37. O=Cc1c(F)n1OO
+38. C(=O)c1cnc1O
+39. O=c1c(C)no1
+40. C(=O)c1cnc1
+41. C(=O)c1ncs1OO
+42. O=Cc1c(O)n1OO
+43. CCc1c(=O)n1
+44. Cc1c(F)nc1C=O
+45. C(=O)CBr
+46. CC(=O)NO
+47. C(=O)c1ncs1O
+48. Cc1c(=O)n1=O
+epoch 5 --- train loss: 924.579367
+validity: 5.41%, novelty: 100.00%, unique: 2.96%
+
+
+
+1. C(=O)NOO
+2. C(=O)O(CO)
+3. C(=O)NCOO
+4. C(=O)C
+5. C(=O)NCO
+6. CCn1c(=O)n1O
+7. C(=O)CO
+8. O=Cc1nc(O)n1
+9. C(=O)NC
+10. O=Cc1nc(F)n1
+11. C(=O)c1non1O
+12. O=Cc1c(F)non1
+13. O=Cc1c(Cl)n1O
+14. C(=O)c1nc(F)s1O
+15. C(=O)c1cn(C)o1
+16. O=Cc1c(F)n1Br
+17. C(=O)OOO
+18. C(=O)c1cn1O
+19. C(=O)COO(O)
+20. Cc1c(=O)n(O)n1
+21. CC(=O)OO
+22. O=C(O)c1no1
+23. CC(=O)O
+24. O=Cc1c(F)n1O
+25. C(=O)CO(O)
+26. COc1c(=O)n(C)n1
+27. Cc1c(=O)sn1
+28. C(=O)CNO
+29. Cn1c(C(=O)O)n1
+30. CC(=O)O(O)
+31. COc1c(F)n(=O)n1
+32. COc1c(=O)n(C)s1O
+33. C(=O)O
+34. Cc1nc(=O)s1
+35. O=C(O)C
+36. Cc1c(F)n(=O)n1
+37. Cn1c(=O)o1
+38. Cc1c(O)n(=O)n1
+39. O=Cc1c(O)n(F)n1O
+40. C(=O)COO
+41. C(=O)CO(C)
+42. C(=O)c1csn1O
+43. O=Cc1c(O)n1O
+44. O=Cc1c(O)n(C)o1
+45. Cn1c(=O)s1
+46. O=Cc1c(O)n(C)s1
+47. C(=O)c1no1
+48. O=C(F)CO
+49. O=C(O)C(OO)
+50. Cc1c(=O)n1
+51. O=Cc1c(O)nn1
+52. Cn1c(=O)on1O
+53. Cc1c(=O)n(CO)n1
+54. O=C(F)C
+55. Cc1noc(=O)n1O
+56. COc1c(=O)n1
+57. COc1n(C)c(=O)n1
+58. O=Cc1c(F)nn1
+59. C(=O)CBr
+60. C(=O)OO(OO)
+61. C(=O)c1ncs1O
+62. C(=O)NO
+63. COC(=O)O(OO)
+64. O=Cc1c(O)n1CO
+65. C(=O)COOO
+66. C(=O)OO
+67. O=Cc1n(O)n1
+68. Cn1c(=O)n1O
+69. C(=O)CO(OO)
+epoch 6 --- train loss: 860.830151
+validity: 3.05%, novelty: 98.57%, unique: 7.65%
+
+
+
+1. C(=O)OC(O)O
+2. Cc1c(=O)n(CO)s1OOO
+3. O=C(O)C(O)O
+4. C(=O)CO
+5. O=C(O)CO(O)
+6. C(=O)OOC(O)OO
+7. O=C(O)COOOO
+8. C(=O)O(O)
+9. C(=O)c1nc(CO)s1OOO
+10. C(=O)COO(O)
+11. C(=O)CO(O)
+12. C(=O)OOOOO
+13. O=C(O)C
+14. Cc1c(=O)n(CO)s1O
+15. C(=O)OOOO
+16. C(=O)COO
+17. C(=O)C(O)
+18. C(=O)NOOOO
+19. C(=O)OO(O)
+20. C(=O)CO(N)
+21. C(=O)c1n(CO)s1OO
+22. C(=O)c1nc(CO)s1OO
+23. C(=O)OC(O)COOO
+24. C(=O)OOC(O)OOO
+25. O=C(O)COOO
+26. C(=O)COOOOO
+27. C(=O)OC(NO)OO
+28. Cc1c(=O)n(CO)s1OO
+29. C(=O)OC(O)OO
+30. C(=O)OCOOOOO
+31. O=C(O)C(O)OO
+32. C(=O)OOOOOO
+33. C(=O)c1nc(CO)s1O(O)
+34. C(=O)COOOO
+35. C(=O)COOO
+epoch 7 --- train loss: 815.130669
+validity: 0.18%, novelty: 100.00%, unique: 63.64%
+
+
+
+1. C(=O)OOOO
+2. C(=O)OO(O)
+3. C(=O)OO(F)
+4. C(=O)NCO(O)
+5. C(=O)OC(O)COO
+6. C(=O)OC(O)COOO
+7. C(=O)COOO
+epoch 8 --- train loss: 779.468999
+validity: 0.10%, novelty: 100.00%, unique: 24.14%
+
+
+
+1. C(=O)c2nc(O)ss2OO
+2. C(=O)c2non2C(N)O
+3. OC(=O)c2nos2(O)COOO
+epoch 9 --- train loss: 751.096128
+validity: 0.01%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. C(=O)Oc2non(NO)n2O
+2. C(=O)OO(O)
+3. C(=O)n2c(OC)non2OO
+4. C(=O)n2cs(O)n2COOO
+5. C(=O)c2noc(O)s2OO
+epoch 10 --- train loss: 727.038142
+validity: 0.02%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. C(=O)OCn2s(N)non2OO
+epoch 11 --- train loss: 704.105767
+validity: 0.00%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. C(=O)Nc2n(O)on(O)s2OO
+2. C(O)CO
+3. C(=O)On2n(O)on2OO
+4. C(O)n2C(=O)sssn2OOO
+5. C(=O)O(O)
+6. C(=O)OC(O)c2non2OO
+7. C(=O)c2c(O)nosss2O
+8. C(=O)Nc2non(O)n2CCl
+9. C(=O)N(CCl)O
+10. C(=O)ON(Cl)O
+11. C(=O)O
+12. O=C(Cl)OO
+13. C(=O)c2n(O)sss2OO
+14. C(=O)On2n(Cl)sn2OO
+15. C(=O)Oc2non(NO)n2O
+16. C(=O)OO(O)
+17. C(=O)Oc(n2O)non2OOO
+18. C(=O)OC(n2)ssss2O
+19. C(=O)c2n(O)ss2CO
+20. C(O)OO(O)
+21. C(=O)(O)n(COC4O)n4OO
+22. C(=O)OCO
+23. C(=O)OO
+24. C(=O)OOO
+25. C(Cl)O
+epoch 12 --- train loss: 704.071165
+validity: 0.10%, novelty: 100.00%, unique: 80.65%
+
+
+
+1. O=[N+](O)n2nnn(CO)n2OOOO
+2. O=C(O)n2OC(Cl)nnn2OOO
+3. C(O)n2OC(=O)nnoOOOnnn2OO
+4. C(=O)COC(n2O)nnn2OO
+5. C(O)n2OC(=O)nnon2OO
+6. COC(=O)OO
+7. C(O)n2OC(=O)nnon2OOOOO
+8. COC(=O)OOO
+9. C(=O)OC(O)n2OOnnnnn2O
+10. C(=O)OOOOO
+11. C(O)n2OOnn(=O)nnn2OOOO
+12. C(=O)O
+13. C(=O)OOO
+14. C(=O)Nc2nn(O)sn2OOOO
+15. C(O)n2Onnon2OOO
+epoch 13 --- train loss: 695.134826
+validity: 0.05%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. O=C(O)NO(O)
+2. C(=O)OCl
+3. OC(=O)OO
+4. O=[N+](O)n2OC(O)nnn2OOO
+5. COC(=O)OO
+6. C(Cl)n2OOnn(=O)n2O
+7. O=C(O)NO
+8. O=C(O)ON(Cl)O
+9. COn2n(=O)non2O
+10. CC(=O)OO
+11. C(O)On2n(O)n(O)n2Cl
+12. C(O)n2nn(=O)on2OO
+13. OC(=O)n2n(O)n(OCO)n2OOOOO
+14. OC(=O)On2OOnnnnnnnnnnn2OOO
+15. OC(=O)n2Onnn(O)n2O
+16. O=C(O)N(CCl)O
+17. C(=O)OO(O)
+18. C(=O)O(NO)
+19. OC(=O)n2OC(O)nnn2OOO
+20. O=S(O)n4C(O)n4O
+21. COC(=O)n2n(O)ssssn2O
+22. COC(=O)O
+23. OC(=O)OOOO
+24. OCOC(=O)NC(CCl)OOOO
+25. OB(O)n2ss(O)nn2OOO
+26. C(=O)NO
+27. O=C(O)OO
+28. OC(=O)OOO
+29. C(=O)OO
+epoch 14 --- train loss: 688.400645
+validity: 0.12%, novelty: 100.00%, unique: 82.86%
+
+
+
+1. O=C(O)n2On(Cl)nnn2OOOO
+2. COOC(=O)OOOOOO
+3. C(=O)OOn2N(Cl)nnn2O
+4. OC(=O)OO
+5. OC(=O)OOOOO
+6. COC(=O)OO
+7. O=C(O)NO
+8. COC(=O)OC(Cl)O
+9. C(O)OOCOC(=O)OOO
+10. O=C(O)OOOO
+11. OC(O)n2OOnnnnn2OOO
+12. C(O)O
+13. OC(O)n2Onnnnn2OOOOO
+14. OC(Cl)n2Onnon(OO)n2OO
+15. COP(=O)(OO)OO
+16. O=[N+](O)OOOOOOO
+17. C(O)n2Onnn(=O)s2O
+18. COB(O)OO
+19. OC(=O)OOOOOOOOO
+20. C(=O)OC(OO)CO
+21. COC(=O)OC(Cl)OO
+22. NC(=O)OO
+23. C(O)n2Onnn(OO)n2O
+24. C(=O)ON(Cl)O
+25. NCOB(O)OO
+26. O=C(O)N(Cl)O
+27. C(=O)O
+28. O=[N+](O)CO
+29. O=C(OO)OOC(O)OOOOO
+30. NCOC(=O)OOOOO
+31. COC(=O)OC(Cl)NOC#N
+32. COCOC(=O)OO
+33. OB(O)OOC(O)(O)OO
+34. O=C(O)OOOOO
+35. COC(=O)OOC(Cl)OO
+36. O=[N+](O)OO
+37. O=C(O)OOOOOOOOOO
+38. COOOO
+39. C(=O)ON(O)O
+40. C(Cl)OO
+41. O=C(O)ONO
+42. COOCOCOC(=O)OOOOOO
+43. COC(=O)O(O)
+44. OC(=O)OOOO
+45. C(O)On4OC(O)nnn4OO
+46. C(=O)OO
+47. COB(O)OC(=O)O
+48. COC(=O)OOO
+49. O=C(O)OO
+50. OC(=O)OOO
+51. C(O)n2OOnn(=O)nnn2OO
+52. C(=O)OOOOOO
+53. C(=O)OOO
+54. C(O)n2OC(O)nnn2OO
+epoch 15 --- train loss: 680.415717
+validity: 0.22%, novelty: 100.00%, unique: 80.60%
+
+
+
+1. COn2OC(Br)nnn2OOOO
+2. O=C(O)OOO
+3. NC(=O)OOBOO
+4. COOC(=O)OOOO
+5. C(O)OOO
+6. O=[N+](O)n2n(NO)n2OO
+7. NOC(=O)OOn2OOB(O)nnon2OOO
+8. OCOn2OC(O)nnn2OO
+9. COOC(=O)OOO
+10. O=C(O)OO
+11. O=[N+](O)O
+12. COB(O)n2ON(O)nnn2O
+13. C(=O)OOO
+14. COB(O)OOO
+15. O=COOC(O)OO
+16. C(=O)On2Onnn(O)n2OOO
+17. OC(=O)OOOOOOOOOO
+18. COB(O)n2nnon2n2n(O)n2N
+19. COOC(O)(O)OO
+20. COOC(=O)OOOOO
+21. C(=O)ON(Cl)O
+22. OC(=O)ONOn2n(O)n2O
+23. COC(=O)ON(O)O
+24. C(=O)OOn2OC(O)on2O
+25. COOCOC(=O)OOOOOO
+26. COP(=O)(OO)O
+27. OCOOC(=O)OOOO
+28. O=[N+](O)OO
+29. OB(O)OOOOO
+30. O=[N+](O)OOOOOO
+31. NC(=O)OOOOOO
+32. OB(O)On2nnn2OO
+33. C#COB(O)OO
+34. OCOn2n(O)nnn(OO)n2O
+35. C[N+](=O)OOB(O)O
+36. NC(=O)OOO
+37. N#COCc2n(O)s2OO
+38. COBOB(OO)OBOO
+39. C(=O)OOB(O)ON
+40. NC(=O)OB(O)O
+41. OCOP(=O)OOOOOO
+42. OC(=O)OO
+43. NCOOC(O)(O)O
+44. COC(O)OOC(O)(O)O
+45. N#CCOOC(O)OO
+46. OC(O)n2ON(O)nnn2OO
+47. C(Cl)On2nnon2OO
+48. COB(O)OO
+49. Oc2non(OO)n2OO
+50. COC(=O)OB(O)O
+51. COB(O)OOn2n(O)O2
+52. C(=O)OOn2nnn(OO)n2n2n(OO)n2OO
+53. NC(=O)OOOOOOOO
+54. COCOC(=O)OOOOOO
+55. N(=O)O
+56. COC(O)OOO
+57. C[N+](=O)OOO
+58. COC(=O)OOC(O)OOO
+59. COC(=O)OO
+60. COC(=O)OON(O)OO
+61. O=C(O)OOOO
+62. COOP(=O)(OO)OO
+63. COOC(=O)OOOOOOOO
+64. COC(=O)ONO
+65. NC(=O)OO
+66. C(O)#N=O
+67. O=[N+](O)OOOO
+68. O=C(O)OOOOO
+69. O=[N+](O)n2n(O)n2ONO
+70. C(=O)OC(O)OC#N
+71. N#COCOC(=O)OO
+72. NC(=O)OB(Cl)O
+73. C(Cl)OO
+74. OCOOC(=O)OOOOOO
+75. COC(=O)OOO
+76. COn2n(=O)nn(OOO)n2NON
+77. CNOB(O)OOO
+78. COn2n(Cl)nnon2OO
+epoch 16 --- train loss: 671.483331
+validity: 0.28%, novelty: 100.00%, unique: 91.76%
+
+
+
+1. OC(O)OOOC(=O)OOOOO
+2. O=NOB(O)OOOOOOO
+3. COC(=O)OB(O)OO
+4. COn2n(O)nnonnn2OOOO
+5. O=c1n(O)ons1OOOOOOO
+6. O=C(IO)OO
+7. C#COO[N+](=O)OOO
+8. C(O)ON(nnnnn2O)nnn2OOOO
+9. C(=O)OON(Cl)OOO
+10. NC(=O)OOO
+11. COC(=O)OB(O)OOIO
+12. O=COCOC(O)OOOOOOOOOO
+13. CNOC(=O)OOOC(NOO)OOOOOOOOOO
+14. COB(O)OB(O)OOO
+epoch 17 --- train loss: 656.100390
+validity: 0.05%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. OCC(Cl)OOOOO
+2. OB(O)ONOO
+3. N#CSNNOO
+4. O=C(O)OB(Cl)ON
+5. O=C(O)OCNOB(O)OOOOOOO
+6. Oc1nnn(=O)non2s1n2OOO
+7. C#CNn1ONnnossn1OOOOOOOO
+8. O=C(O)ON(O)ONOOOONOO
+9. O=C(O)n1Nnnn1OOOO
+10. COC(=O)ON(O)OO
+11. O=c1n(N)ons1N
+12. O=[N+](Cl)N=N#N
+13. N#CCC(=O)OB(O)O
+14. O=C(O)OOB(O)OOOOOO
+15. C=C(O)N(O)OB(O)NNN
+16. C(=O)OOB(O)OOOO
+17. O=C(O)OOCOB(O)OOOOOOOOOOOOO
+18. O=COB(O)OB(O)OOOOO
+19. O=C(O)NNNNOOOOOOO
+20. O=NOC(O)OB(O)OOOOOOO
+21. CC(O)OBOB(O)OBOB(O)OOOOO
+22. NC(=O)OC(O)OO
+23. OC(O)OOOC(O)OOOOOOOOO
+24. CNC(=O)ON(O)ONOOOOO
+25. O=C(O)OOC(O)OOOOOOO
+26. NC(=O)OOOOOOO
+27. OC(O)OB(O)O
+28. C(=O)NOOC(NO)OC(=O)ONONOO
+29. NOC(=O)OOOOOOOOOOOO
+30. COC(O)OB(O)OOOOOO
+31. NC(=O)OCOON(Cl)OONCNONONOOO
+32. Cc1nosss(=O)sss1
+33. OC(=O)OOB(O)OO
+34. C(=O)N=NOO
+35. O=C(O)OB(O)OONOOOOOO
+36. O=C(N)NNNNNN
+37. Nn1n(=O)ns1
+38. COC(=O)OOOOOC(O)OOOOOO
+39. OC(=O)NOCOOOOOOOO
+40. O=C(Br)OO
+41. OC(O)N(O)NNONNNNNNNNN
+42. NC(=O)OOB(O)OOOOOOO
+43. O=[N+]([O-])NNNNNNNNNNNN
+epoch 18 --- train loss: 645.334878
+validity: 0.14%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Cc1no[n+]2non12
+2. O=[N+]([O-])NNN
+3. Nc1noss1
+4. C(=O)N=N
+5. OC(=O)OOOOOO
+6. [O-][n+]1non1N
+7. C#CS(O)OB(O)OO
+8. O=[N+](O)OOn2OC(O)n2Cl
+9. NOC(O)n2OC(O)nnon2O
+10. OCOC(=O)OOOO
+11. O=c1n(Cl)ssssss1
+epoch 19 --- train loss: 636.238252
+validity: 0.04%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. O=c1n(Br)ooo1
+2. O=c1n(Cl)oss1
+3. N#Cc1nc2oo[n+]2ooNo1
+4. O=C(Cl)n1NNns1N
+5. O=C(O)NCl
+6. O=c(OCnnosssssss1)n1N
+7. O=C(Cl)n1nno1
+8. N#Cc1nsso1
+9. Oc1no[n+](Cl)nnn1
+10. Oc1sssssss1OO
+11. O=C(O)OCl
+12. CS(Cl)N=NNN
+13. Oc1n[nH]ss1=N
+14. Oc1no[n+]([O-])non1N
+15. OB(Cl)n1Cnno1
+16. O=C(Cl)NNNN
+17. O=C(O)N=O
+18. O=c1n(Cl)nno1
+19. On1nnn1N=NNNNNNNN
+20. O=Cn1nnsn1N
+21. O=C(Br)[N-]O
+22. O(Br)n4NNn4NNNN
+23. Oc1nn(Cl)ss1
+24. Nc1n2sn[n+]2nnn1
+25. N([SeH])NN
+26. N#Cc1nnnoNnnn1OOOO
+27. O=Sn1n(Cl)nnnn1
+28. O=n1non1-c1nn1Cl
+29. Nc1no[n+]no1
+30. Nn1nnn1N
+31. O(O)n1N=NCn1NNNNNNNNNN
+32. OB([O-])NNN
+33. O=[N+]([O-])[BH2-]NNNNNNNNN
+34. N(=O)OO
+35. NOc1no[n+]2o[n+]2os1
+36. O=C(I)n1ss1
+37. OCc1oson1
+38. OCSS(Cl)(=O)NNNNNNN
+39. C#CSSSSn1ns1Cl
+40. [O-]CSc1no[n+]1=S
+41. O[S+]([O-])s1no1
+epoch 20 --- train loss: 626.444665
+validity: 0.14%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. Cc1nc2=nc2noc2oNNc2NNNN=NcnosNNNNNCN1NNN
+2. Oc1nosn1C
+3. O[B-](Br)=[NH+]N=[NH+]N
+4. C[n+]1no[n+]2C=CCc2sooo1
+5. Nc1nncno[n+]1
+6. Nc1nonnn1-NNNNNN
+7. O=c1os2o[n+]2oooo1
+8. Nn1nnSnnn1NNNN
+9. Oc1nc2nc2nc2n[nH]nc2NCCnn1
+10. Nc1n2c3cc3nc3=nc3nc2nn1
+11. N=C(F)n1C(F)n1Cl
+12. CC(Br)NCCc1NCCCc1NCCCCN
+13. Oc1sss[n+]1-N=NNN=NN
+14. OB(O)s4oNc4NNNc4NNc4NNNNNNNNNN
+15. O=C(Cl)N=O
+16. COC(Cl)N=NN
+17. OC(=C)S=N
+epoch 21 --- train loss: 613.572284
+validity: 0.06%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. OCOOC(=O)OBOOO[B-](O)OOO
+epoch 22 --- train loss: 602.497763
+validity: 0.00%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. CSc1o[n+]2-cno[n+]1-o[n+]2[BH2-][BH2-]
+epoch 23 --- train loss: 591.229600
+validity: 0.00%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. O=c1-cc2cc2ccc2occcccc1ooc1oc1oc1oc2oooc1
+2. NO[B-]SSSSSSSSSSSSSSSS
+3. OC(O)SSSSSSS[BH2-]n1SSSSSSSSSSSSSn1NNN
+4. O=c2nc2NCNNCNNCNNNNNNNNCNNNc2NNNCN=NNNc2N
+5. O=C=C=C=NNc1C=Nc1Nc1=NNNNNc1=NNc1=NNc1=NN
+6. O[B-]#CSSS(-N2)oNNc2Nc1NcNNcNcNcNc2NNcNc1Nc2
+7. NCCCCCCCCCCCCCCCCCCCCCNCCCCCCCNCCCCCNCCCC
+8. OC(Cl)c1c2non2Nc3N=Nc3NNNNcnoNNNNcnoNNNNc1
+9. OOBc1-ScnsssssSSSSSSSSSSsssssss1-SSSSSSSS
+10. O[B-]#CSSSSSSS
+11. O=C=c1N=c=CNNNNNN=CNNNN=CNNN=c1NNNN=C=NNN
+12. N#CSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSC
+epoch 24 --- train loss: 579.526261
+validity: 0.04%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. OC(Cl)n1nnn2-Nnnn2Nn1N
+2. OOc1N[NH+]Nc2Nc2Nc3NNNc3NNc3NNc3NnNNN=NNN1NNN
+3. OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+4. C(=O)N=CNN=NCN=NNc1CN=CNc1NCNCNCNNCNNCNCN
+5. O(O)N=Nn2NNN=NN2n1NNNNNNN2N=NNNNN2n1NNN=N
+epoch 25 --- train loss: 568.466619
+validity: 0.02%, novelty: 100.00%, unique: 100.00%
+
+
+
+1. NOC#SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+2. O[B-](Cl)-N1NC1NCc1NCNCN1NCN1Nc1NCN1Nc1Nc1Nc1
+3. OSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS-SSSSSSS
+4. CSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+5. OCSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+6. ONNNNNNNNN=N[C-][C-]N[C-]N[C-]NNNNNNNNNNNNNNNNNNNNNNN
+7. OCOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+8. C#SSSS#SSSS#SSSSS#SSS#SSSSSS#SSS#SSSSS#SS
+9. O[B-]#SSS#SOS#S#S#S#S#SOS#S#SS#SSOS#S#S#SS#S
+10. Nc1ccc1Nc1Nc1Nc1Nc1Nc1NNNNNc1Nc1Nc1Nc1Nc1
+11. [C-]SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+12. N=c1NN=NCNN=NNNNNNN=NNNNN=NNNcccc1NNN=NNN
+13. OCNOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+14. OSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+15. [N-]=SCSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+16. ONc1ccccc1NCNNNNNNCNCNNNCNNCNNCNNCNNCNNCN
+17. OCNNSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+18. C#SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS#SSSSS
+19. Cn3ns3-SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+20. C#SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+21. N#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S#S
+22. N#SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+23. O=NNc1Nc1NNNNNNNNNNNNNc1NNNNNNNNNNNNc1NNN
+24. OOOCOOCOCOOC#SSSSSSSSSSSSSSSSSSSSSSSSSSSS
+epoch 26 --- train loss: 559.965797
+validity: 0.09%, novelty: 100.00%, unique: 92.31%
+
+
+
+1. CSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+2. OCSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+3. N=SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+4. NSSSSSSSSSSSSS=SSSSSSSSSSSSSSSSSSSSSSSSSS
+5. [O-]SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+6. N#N=c1CC1NNNCNNNCNNNCNNNNNNNCNNNCNNNCNNCN
+7. O=s1=Ns1=NCNNNNNNNNNNNNNNNNNCNNCNc1CNc1CN
+8. NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+9. CCCCCCCCCCCN=NNNNNNNNNNNNNNNNNNNNNNNNNNNN
+10. NCOCOCOOOOOOOOOOCOOCOOCOOOCOOOOCOOOOCOOOO
+11. C(O)SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+12. Nn3[nH]n3SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+13. NOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+14. N#SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+15. Cn1N=NNNNN=NNNN1NNNNNNNNNNNNNNNNN=NNNNNNN
+16. O=NNOCNOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+17. O[S+]SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+18. OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+19. NSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+20. NNNSSSc1NNNNc1SSSSSSSSSSSSSSSSSSSSSSSSSSS
+epoch 27 --- train loss: 550.984862
+validity: 0.10%, novelty: 100.00%, unique: 68.97%
+
+
+

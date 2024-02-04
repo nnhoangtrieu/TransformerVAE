@@ -1,0 +1,30 @@
+Number of data: 411544
+############################## TRAINING #################################
+epoch 1 
+ train loss: 1.223899 
+ recon_loss: 1.212965 
+ kl_loss: 36.446965 
+ beta: 0.0003
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+
+epoch 2 
+ train loss: 0.954578 
+ recon_loss: 0.954187 
+ kl_loss: 0.121552 
+ beta: 0.0032099999999999997
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+
+epoch 3 
+ train loss: 0.881939 
+ recon_loss: 0.881886 
+ kl_loss: 0.008611 
+ beta: 0.00612
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+
+epoch 4 
+ train loss: 0.840570 
+ recon_loss: 0.840564 
+ kl_loss: 0.000670 
+ beta: 0.00903
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+

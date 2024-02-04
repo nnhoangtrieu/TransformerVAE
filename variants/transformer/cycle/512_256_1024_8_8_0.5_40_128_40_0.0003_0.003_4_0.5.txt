@@ -1,0 +1,22 @@
+model config: Namespace(d_model=512, d_latent=256, d_ff=1024, num_head=8, num_layer=8, dropout=0.5, lr=0.0003, epochs=40, batch_size=128, max_len=40, kl_w_start=0.0003, kl_w_end=0.003, kl_cycle=4, kl_ratio=0.5)
+
+
+
+1. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+epoch 1 --- train loss: 3805.437605
+validity: 100.00%, novelty: 100.00%, unique: 0.00%
+
+
+
+1. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+epoch 2 --- train loss: 2769.478623
+validity: 48.00%, novelty: 100.00%, unique: 0.01%
+
+
+
+1. CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+epoch 3 --- train loss: 2426.703708
+validity: 0.39%, novelty: 100.00%, unique: 0.85%
+
+
+
